@@ -53,5 +53,6 @@
     nil
     just
     codebook
+    nail-parquet
   ];
 }
