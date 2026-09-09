@@ -1,5 +1,6 @@
 .devenv
 .devenv.*
+.pre-commit-config.yaml
 .pytask
 .idea
 .virtual_documents
