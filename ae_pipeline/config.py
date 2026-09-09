@@ -8,6 +8,7 @@ ROOT_DIR = Path(__file__).parent
 
 AA_DATA_DIR = ROOT_DIR / "aa_data"
 DATA_DIR = ROOT_DIR / "data"
+WAVEFORMS_DIR = ROOT_DIR / "waveforms"
 
 
 class Dataset(BaseModel):
@@ -27,6 +28,11 @@ class Dataset(BaseModel):
     @cached_property
     def data_file(self) -> Path:
         return DATA_DIR / self.primary_file.with_suffix(".parquet").relative_to(AA_DATA_DIR)
+
+    @computed_field
+    @cached_property
+    def waveforms_dir(self) -> Path:
+        return WAVEFORMS_DIR / self.name
 
     @model_validator(mode="after")
     def validate_src_files_exist(self) -> Self:

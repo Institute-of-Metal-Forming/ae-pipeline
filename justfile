@@ -1,4 +1,4 @@
-set default-list := true
+set default-list
 
 # build the entire project using pytask optionally filtered by 'key'
 build key="":
