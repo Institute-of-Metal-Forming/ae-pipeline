@@ -1,10 +1,10 @@
 
 FILE OVERVIEW
 
-  Path                 /home/maxwe/Git/ae_emission/ae_emission/data/test.parquet
+  Path                 /home/maxwe/Git/ae_emission/ae_pipeline/data/test.parquet
   Format               Parquet
   Size                 0.13 MB (138031 bytes)
-  Modified             2026-09-09 13:22:22
+  Modified             2026-09-09 14:14:41
   Created              2026-09-09 13:21:52
 
 DIMENSIONS

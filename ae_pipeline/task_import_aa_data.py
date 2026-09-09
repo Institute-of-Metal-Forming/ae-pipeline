@@ -3,7 +3,7 @@ import subprocess
 import pandas as pd
 import pytask
 
-from ae_emission.config import DATASETS
+from ae_pipeline.config import DATASETS
 
 primary_data_files = list()
 

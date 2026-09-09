@@ -1,5 +1,5 @@
 [project]
-name = "ae-emission"
+name = "ae-pipeline"
 authors = [{ name = "Max Weiner", email = "max.weiner@imf.tu-freiberg.de" }]
 version = "0.1"
 requires-python = ">=3.14"
@@ -28,9 +28,9 @@ classifiers = [
 ]
 
 [project.urls]
-Documentation = "https://github.com/institute-of-metal-forming/ae_emission/src/branch/main/README.md"
-Issues = "https://github.com/institute-of-metal-forming/ae_emission/issues"
-Source = "https://github.com/institute-of-metal-forming/ae_emission"
+Documentation = "https://github.com/institute-of-metal-forming/ae-pipeline/src/branch/main/README.md"
+Issues = "https://github.com/institute-of-metal-forming/ae-pipeline/issues"
+Source = "https://github.com/institute-of-metal-forming/ae-pipeline"
 
 [build-system]
 requires = ["uv_build~=0.12.0"]
@@ -76,8 +76,8 @@ mark-parentheses = false
 ban-relative-imports = "all"
 
 [tool.ruff.lint.isort]
-known-first-party = ["ae_emission"]
+known-first-party = ["ae_pipeline"]
 
 [tool.pytask.ini_options]
-paths = ["ae_emission"]
+paths = ["ae_pipeline"]
 ignore = [".*", "_*"]
