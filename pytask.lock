@@ -1,22 +1,32 @@
 lock-version = "1"
 
 [[task]]
+id = "ae_pipeline/aa_data/task_create_test_data.py::task_create_test_data"
+state = "92f88e9730b2610ed2237d96d35b9649372935611697e9dafdb42b3200ade6d1"
+
+[task.depends_on]
+
+[task.produces]
+"ae_pipeline/aa_data/test.pridb" = "df2e5004f7841638c21eb9a99ff87d8b1e803cd313a8387ba590d66209db6f7d"
+"ae_pipeline/aa_data/test.tradb" = "295045daa4fcb4429439c7f721f5ba908082f6cd6dc6af9c2792cd6f59cdad0c"
+
+[[task]]
 id = "ae_pipeline/task_import_aa_data.py::task_describe_dataset"
 state = "696023e4e014f4f81f7734a43eb82486dcbba43c8f3dfb2a5614d9c709c75de4"
 
 [task.depends_on]
-"ae_pipeline/data/test.parquet" = "8868cc6b49b7699df454379c4eb637cb5b99e4890c7adffa73131d7b77d57a91"
+"ae_pipeline/data/test.parquet" = "e5afc0b292eb1bee8a396f75f3d5c7671b4183ac29100d45ff22919965ae3869"
 
 [task.produces]
-"ae_pipeline/data/test.txt" = "88a990fdc6c976d2d0d4498b5b4b6cc1a090716a1cc4c7d5f790d07ada31c3db"
+"ae_pipeline/data/test.txt" = "ee3adea09f8acb6d509aa1a08246ce0ebe3bbfd73745533c979f5d8f6c5c8462"
 
 [[task]]
 id = "ae_pipeline/task_import_aa_data.py::task_import_aa_data"
 state = "696023e4e014f4f81f7734a43eb82486dcbba43c8f3dfb2a5614d9c709c75de4"
 
 [task.depends_on]
-"ae_pipeline/aa_data/test.pridb" = "47cc9e923970e499ca45d45f074c871a029016583a92b54f73c790544c102124"
-"ae_pipeline/aa_data/test.tradb" = "dc2bffa5c338bfaf895846d0f4dd421783c7ba6375c899c34b5810d31139a942"
+"ae_pipeline/aa_data/test.pridb" = "df2e5004f7841638c21eb9a99ff87d8b1e803cd313a8387ba590d66209db6f7d"
+"ae_pipeline/aa_data/test.tradb" = "295045daa4fcb4429439c7f721f5ba908082f6cd6dc6af9c2792cd6f59cdad0c"
 
 [task.produces]
-"ae_pipeline/data/test.parquet" = "8868cc6b49b7699df454379c4eb637cb5b99e4890c7adffa73131d7b77d57a91"
+"ae_pipeline/data/test.parquet" = "e5afc0b292eb1bee8a396f75f3d5c7671b4183ac29100d45ff22919965ae3869"

@@ -16,7 +16,7 @@ class Dataset(BaseModel):
     @computed_field
     @cached_property
     def name(self) -> str:
-        return self.primary_file.name
+        return self.primary_file.stem
 
     @computed_field
     @cached_property

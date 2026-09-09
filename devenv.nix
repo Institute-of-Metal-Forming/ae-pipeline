@@ -54,5 +54,6 @@
     just
     codebook
     nail-parquet
+    sqlitebrowser
   ];
 }
