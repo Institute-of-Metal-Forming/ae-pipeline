@@ -86,6 +86,8 @@ def task_gen_waveforms(
             for p in produces:
                 fig.savefig(p)
 
+            plt.close(fig)
+
         @pytask.task(id=wf.name)
         def task_waveform_fft_plot(
             fft_file=wf.fft_file,
@@ -102,3 +104,5 @@ def task_gen_waveforms(
 
             for p in produces:
                 fig.savefig(p)
+
+            plt.close(fig)
