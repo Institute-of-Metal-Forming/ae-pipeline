@@ -1,6 +1,15 @@
 lock-version = "1"
 
 [[task]]
+id = "ae_pipeline/aa_data/task_collect_datasets.py::task_collect_datasets"
+state = "b8f6c80112c68eeed823d15e1f98849500ced0520496d839bdcf2c295f09fda1"
+
+[task.depends_on]
+
+[task.produces]
+".pytask/data_catalogs/ae-pipeline/714284abfa95a1447d7c34554c2d65b16fcfb1af22a44fc15489d13b76e951e5.pkl" = "7812fc34c6c29f42b8e7ff1173de3f08b346d040845973283797483322b82d89"
+
+[[task]]
 id = "ae_pipeline/aa_data/task_create_test_data.py::task_create_test_data"
 state = "efa508782490cde1fa9bd2308284685f45da494c1e9d5732846548906526fb66"
 
@@ -12,17 +21,17 @@ state = "efa508782490cde1fa9bd2308284685f45da494c1e9d5732846548906526fb66"
 
 [[task]]
 id = "ae_pipeline/data/task_import_aa_data.py::task_describe_dataset"
-state = "3eaca5f6a5843bddacada0199eabcc5b6a4cfdb1247739f5a1cc28250651b4f1"
+state = "b3321979527b790b6e957bbfed9e095412d536a494214dba57864a2f5625b6e8"
 
 [task.depends_on]
 "ae_pipeline/data/test.parquet" = "21be789abd80e5a394342afe13cab54e95a3bdc32fb179ea5116b590cd0c23d9"
 
 [task.produces]
-"ae_pipeline/data/test.txt" = "97117791eba21b3738393d88f829aa6606ca5e52e7a94a26ba697e960d87ccdf"
+"ae_pipeline/data/test.txt" = "a0a0c386e45d3b6c7105cde8a45f1276048c3c4c281f69ed268ca922ba6335a0"
 
 [[task]]
 id = "ae_pipeline/data/task_import_aa_data.py::task_import_aa_data"
-state = "3eaca5f6a5843bddacada0199eabcc5b6a4cfdb1247739f5a1cc28250651b4f1"
+state = "b3321979527b790b6e957bbfed9e095412d536a494214dba57864a2f5625b6e8"
 
 [task.depends_on]
 "ae_pipeline/aa_data/test.pridb" = "df2e5004f7841638c21eb9a99ff87d8b1e803cd313a8387ba590d66209db6f7d"
@@ -54,9 +63,12 @@ state = "696023e4e014f4f81f7734a43eb82486dcbba43c8f3dfb2a5614d9c709c75de4"
 
 [[task]]
 id = "ae_pipeline/waveforms/task_waveforms.py::task_waveforms"
-state = "c6c0173f9ee6fb89c9324dfe50c1cfe296e7e7cc4371e2c857be2f3a66aa1bfa"
+state = "c72f55c0d9b383071dab2e52542f427dd6906d0d414e2b53ddc41172ff83c8b4"
 
 [task.depends_on]
 "ae_pipeline/data/test.parquet" = "21be789abd80e5a394342afe13cab54e95a3bdc32fb179ea5116b590cd0c23d9"
 
 [task.produces]
+"ae_pipeline/waveforms/test/waveform_1024.parquet" = "bf8c181269a06ad2b4e96b881ea201daf3b56ca14c27a813d42e028e690144a3"
+"ae_pipeline/waveforms/test/waveform_1024.png" = "9e00062e8b3cb4cb00193826b53211a2e999b16a91e016b75973260645cfbd60"
+"ae_pipeline/waveforms/test/waveform_fft_1024.parquet" = "b27a4a808d2755797d33323ce20509a9edf1a72f3476ca492ce396ce85d1324f"

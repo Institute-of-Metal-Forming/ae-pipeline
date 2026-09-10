@@ -5,6 +5,7 @@ from typing import Self
 import matplotlib as mpl
 import numpy as np
 from pydantic import BaseModel, computed_field, model_validator
+from pytask import DataCatalog
 
 ROOT_DIR = Path(__file__).parent
 
@@ -45,7 +46,7 @@ class Dataset(BaseModel):
         return self
 
 
-DATASETS = [Dataset(primary_file=f) for f in AA_DATA_DIR.glob("*.pridb")]
+CATALOG = DataCatalog(name="ae-pipeline")
 
 
 def mm_to_inch(v):
