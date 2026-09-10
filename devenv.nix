@@ -30,6 +30,14 @@
       ];
       just.enable = true;
       taplo.enable = true;
+      yamlfmt = {
+        enable = true;
+        settings = {
+          formatter = {
+            indent = 4;
+          };
+        };
+      };
       mdformat = {
         enable = true;
         plugins =
