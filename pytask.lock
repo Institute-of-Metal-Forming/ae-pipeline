@@ -2,12 +2,14 @@ lock-version = "1"
 
 [[task]]
 id = "ae_pipeline/aa_data/task_collect_datasets.py::task_collect_datasets"
-state = "b8f6c80112c68eeed823d15e1f98849500ced0520496d839bdcf2c295f09fda1"
+state = "03f9f2df4de07192ead6a669dff8d53a3189e5b2a89e2c757088d61615d4c1be"
 
 [task.depends_on]
+"ae_pipeline/aa_data/example.pridb" = "47cc9e923970e499ca45d45f074c871a029016583a92b54f73c790544c102124"
+"ae_pipeline/aa_data/test.pridb" = "df2e5004f7841638c21eb9a99ff87d8b1e803cd313a8387ba590d66209db6f7d"
 
 [task.produces]
-".pytask/data_catalogs/ae-pipeline/714284abfa95a1447d7c34554c2d65b16fcfb1af22a44fc15489d13b76e951e5.pkl" = "7812fc34c6c29f42b8e7ff1173de3f08b346d040845973283797483322b82d89"
+".pytask/data_catalogs/ae-pipeline/714284abfa95a1447d7c34554c2d65b16fcfb1af22a44fc15489d13b76e951e5.pkl" = "6ed36b98b206080a9aa501e1efd4fde72a8ac98c3fe2c44e2c17213b50e58cb6"
 
 [[task]]
 id = "ae_pipeline/aa_data/task_create_test_data.py::task_create_test_data"
@@ -30,7 +32,49 @@ state = "b3321979527b790b6e957bbfed9e095412d536a494214dba57864a2f5625b6e8"
 "ae_pipeline/data/test.txt" = "a0a0c386e45d3b6c7105cde8a45f1276048c3c4c281f69ed268ca922ba6335a0"
 
 [[task]]
+id = "ae_pipeline/data/task_import_aa_data.py::task_describe_dataset[example]"
+state = "b3321979527b790b6e957bbfed9e095412d536a494214dba57864a2f5625b6e8"
+
+[task.depends_on]
+"ae_pipeline/data/example.parquet" = "8868cc6b49b7699df454379c4eb637cb5b99e4890c7adffa73131d7b77d57a91"
+
+[task.produces]
+"ae_pipeline/data/example.txt" = "58e17f5fa109e0202eb5f61e9a51d9d3de650f811315b80a1e0d322caa72685a"
+
+[[task]]
+id = "ae_pipeline/data/task_import_aa_data.py::task_describe_dataset[test]"
+state = "b3321979527b790b6e957bbfed9e095412d536a494214dba57864a2f5625b6e8"
+
+[task.depends_on]
+"ae_pipeline/data/test.parquet" = "21be789abd80e5a394342afe13cab54e95a3bdc32fb179ea5116b590cd0c23d9"
+
+[task.produces]
+"ae_pipeline/data/test.txt" = "e7950425ceb70663f9cd53924a3660891b4acd6b3948ace87034efeac84c6f79"
+
+[[task]]
 id = "ae_pipeline/data/task_import_aa_data.py::task_import_aa_data"
+state = "b3321979527b790b6e957bbfed9e095412d536a494214dba57864a2f5625b6e8"
+
+[task.depends_on]
+"ae_pipeline/aa_data/test.pridb" = "df2e5004f7841638c21eb9a99ff87d8b1e803cd313a8387ba590d66209db6f7d"
+"ae_pipeline/aa_data/test.tradb" = "30ea65ed1038bd8c0ee6e09bfd74c9046cf9434330c0e055221f4c0d28d9b831"
+
+[task.produces]
+"ae_pipeline/data/test.parquet" = "21be789abd80e5a394342afe13cab54e95a3bdc32fb179ea5116b590cd0c23d9"
+
+[[task]]
+id = "ae_pipeline/data/task_import_aa_data.py::task_import_aa_data[example]"
+state = "b3321979527b790b6e957bbfed9e095412d536a494214dba57864a2f5625b6e8"
+
+[task.depends_on]
+"ae_pipeline/aa_data/example.pridb" = "47cc9e923970e499ca45d45f074c871a029016583a92b54f73c790544c102124"
+"ae_pipeline/aa_data/example.tradb" = "dc2bffa5c338bfaf895846d0f4dd421783c7ba6375c899c34b5810d31139a942"
+
+[task.produces]
+"ae_pipeline/data/example.parquet" = "8868cc6b49b7699df454379c4eb637cb5b99e4890c7adffa73131d7b77d57a91"
+
+[[task]]
+id = "ae_pipeline/data/task_import_aa_data.py::task_import_aa_data[test]"
 state = "b3321979527b790b6e957bbfed9e095412d536a494214dba57864a2f5625b6e8"
 
 [task.depends_on]
@@ -63,17 +107,17 @@ state = "696023e4e014f4f81f7734a43eb82486dcbba43c8f3dfb2a5614d9c709c75de4"
 
 [[task]]
 id = "ae_pipeline/waveforms/task_waveforms.py::task_collect_waveforms"
-state = "cdacbcab9a40a34b2c1df6d01a5e115303e74069a5d664d5ac6bcedaea41304c"
+state = "6fb0c1e60efd20bac5ad9f23a2b9112c7ea18b4a20040c02e5337cb77b0436ce"
 
 [task.depends_on]
-".pytask/data_catalogs/ae-pipeline/714284abfa95a1447d7c34554c2d65b16fcfb1af22a44fc15489d13b76e951e5.pkl" = "7812fc34c6c29f42b8e7ff1173de3f08b346d040845973283797483322b82d89"
+".pytask/data_catalogs/ae-pipeline/714284abfa95a1447d7c34554c2d65b16fcfb1af22a44fc15489d13b76e951e5.pkl" = "6ed36b98b206080a9aa501e1efd4fde72a8ac98c3fe2c44e2c17213b50e58cb6"
 
 [task.produces]
-".pytask/data_catalogs/ae-pipeline/d560c9358b2a81bc2ba0fd4330d4bbd9a349114ac671634c2e2a67f8e3ba920c.pkl" = "1a8c56c5c8db32c519c67b2a7ced9cf33f563326b7c7385b6493f65d8b2c3224"
+".pytask/data_catalogs/ae-pipeline/d560c9358b2a81bc2ba0fd4330d4bbd9a349114ac671634c2e2a67f8e3ba920c.pkl" = "26c8a10a7d677d24893ae3376707c5e73404d8ad2a351febd1f201e2cfea8448"
 
 [[task]]
 id = "ae_pipeline/waveforms/task_waveforms.py::task_waveform_decode"
-state = "cdacbcab9a40a34b2c1df6d01a5e115303e74069a5d664d5ac6bcedaea41304c"
+state = "6fb0c1e60efd20bac5ad9f23a2b9112c7ea18b4a20040c02e5337cb77b0436ce"
 
 [task.depends_on]
 "ae_pipeline/data/test.parquet" = "21be789abd80e5a394342afe13cab54e95a3bdc32fb179ea5116b590cd0c23d9"
@@ -83,8 +127,129 @@ state = "cdacbcab9a40a34b2c1df6d01a5e115303e74069a5d664d5ac6bcedaea41304c"
 "ae_pipeline/waveforms/test/1024/signal.parquet" = "bf8c181269a06ad2b4e96b881ea201daf3b56ca14c27a813d42e028e690144a3"
 
 [[task]]
+id = "ae_pipeline/waveforms/task_waveforms.py::task_waveform_decode[example/41641073]"
+state = "6fb0c1e60efd20bac5ad9f23a2b9112c7ea18b4a20040c02e5337cb77b0436ce"
+
+[task.depends_on]
+"ae_pipeline/data/example.parquet" = "8868cc6b49b7699df454379c4eb637cb5b99e4890c7adffa73131d7b77d57a91"
+"ae_pipeline/waveforms/task_waveforms.py::task_waveform_decode[example/41641073]::time" = "0"
+
+[task.produces]
+"ae_pipeline/waveforms/example/41641073/signal.parquet" = "329934b7d3d9bf381ed82723d7ba46175ff62f2a2d09d698cab5f6ddc5f272dd"
+
+[[task]]
+id = "ae_pipeline/waveforms/task_waveforms.py::task_waveform_decode[example/42011803]"
+state = "6fb0c1e60efd20bac5ad9f23a2b9112c7ea18b4a20040c02e5337cb77b0436ce"
+
+[task.depends_on]
+"ae_pipeline/data/example.parquet" = "8868cc6b49b7699df454379c4eb637cb5b99e4890c7adffa73131d7b77d57a91"
+"ae_pipeline/waveforms/task_waveforms.py::task_waveform_decode[example/42011803]::time" = "0"
+
+[task.produces]
+"ae_pipeline/waveforms/example/42011803/signal.parquet" = "8db220cd431e6fe3d4baaef2d2cdee99632edeac65b65145d8f9323101e4222a"
+
+[[task]]
+id = "ae_pipeline/waveforms/task_waveforms.py::task_waveform_decode[example/42125219]"
+state = "6fb0c1e60efd20bac5ad9f23a2b9112c7ea18b4a20040c02e5337cb77b0436ce"
+
+[task.depends_on]
+"ae_pipeline/data/example.parquet" = "8868cc6b49b7699df454379c4eb637cb5b99e4890c7adffa73131d7b77d57a91"
+"ae_pipeline/waveforms/task_waveforms.py::task_waveform_decode[example/42125219]::time" = "0"
+
+[task.produces]
+"ae_pipeline/waveforms/example/42125219/signal.parquet" = "5f411327b937f971ebb97260a520802bbcd4247e1119d6d3d02a8682152d2521"
+
+[[task]]
+id = "ae_pipeline/waveforms/task_waveforms.py::task_waveform_decode[example/42137890]"
+state = "6fb0c1e60efd20bac5ad9f23a2b9112c7ea18b4a20040c02e5337cb77b0436ce"
+
+[task.depends_on]
+"ae_pipeline/data/example.parquet" = "8868cc6b49b7699df454379c4eb637cb5b99e4890c7adffa73131d7b77d57a91"
+"ae_pipeline/waveforms/task_waveforms.py::task_waveform_decode[example/42137890]::time" = "0"
+
+[task.produces]
+"ae_pipeline/waveforms/example/42137890/signal.parquet" = "16ef697b49ae7bdb364980898b729baf6c1586a1d9fed70acc7827a4fd0f02a0"
+
+[[task]]
+id = "ae_pipeline/waveforms/task_waveforms.py::task_waveform_decode[example/42159151]"
+state = "6fb0c1e60efd20bac5ad9f23a2b9112c7ea18b4a20040c02e5337cb77b0436ce"
+
+[task.depends_on]
+"ae_pipeline/data/example.parquet" = "8868cc6b49b7699df454379c4eb637cb5b99e4890c7adffa73131d7b77d57a91"
+"ae_pipeline/waveforms/task_waveforms.py::task_waveform_decode[example/42159151]::time" = "0"
+
+[task.produces]
+"ae_pipeline/waveforms/example/42159151/signal.parquet" = "1df76b3f12b6e17d04c6ed76f27a9667e6e3f2bbb7e4f8066d0289bea817bb67"
+
+[[task]]
+id = "ae_pipeline/waveforms/task_waveforms.py::task_waveform_decode[example/42169776]"
+state = "6fb0c1e60efd20bac5ad9f23a2b9112c7ea18b4a20040c02e5337cb77b0436ce"
+
+[task.depends_on]
+"ae_pipeline/data/example.parquet" = "8868cc6b49b7699df454379c4eb637cb5b99e4890c7adffa73131d7b77d57a91"
+"ae_pipeline/waveforms/task_waveforms.py::task_waveform_decode[example/42169776]::time" = "0"
+
+[task.produces]
+"ae_pipeline/waveforms/example/42169776/signal.parquet" = "faecfa44f5eada708f3ae2ff26fec7bca5b2fec1a730741d56b8102d047c40ba"
+
+[[task]]
+id = "ae_pipeline/waveforms/task_waveforms.py::task_waveform_decode[example/42191544]"
+state = "6fb0c1e60efd20bac5ad9f23a2b9112c7ea18b4a20040c02e5337cb77b0436ce"
+
+[task.depends_on]
+"ae_pipeline/data/example.parquet" = "8868cc6b49b7699df454379c4eb637cb5b99e4890c7adffa73131d7b77d57a91"
+"ae_pipeline/waveforms/task_waveforms.py::task_waveform_decode[example/42191544]::time" = "0"
+
+[task.produces]
+"ae_pipeline/waveforms/example/42191544/signal.parquet" = "d773d1bd38bdb3eb74bff0e24ef0f19aca8a620da753c5b937dc0f60183dee1b"
+
+[[task]]
+id = "ae_pipeline/waveforms/task_waveforms.py::task_waveform_decode[example/42207531]"
+state = "6fb0c1e60efd20bac5ad9f23a2b9112c7ea18b4a20040c02e5337cb77b0436ce"
+
+[task.depends_on]
+"ae_pipeline/data/example.parquet" = "8868cc6b49b7699df454379c4eb637cb5b99e4890c7adffa73131d7b77d57a91"
+"ae_pipeline/waveforms/task_waveforms.py::task_waveform_decode[example/42207531]::time" = "0"
+
+[task.produces]
+"ae_pipeline/waveforms/example/42207531/signal.parquet" = "da0d0f4152ae3754da4081136ab3db62e396fb4f7504bd28fd98dfea38789524"
+
+[[task]]
+id = "ae_pipeline/waveforms/task_waveforms.py::task_waveform_decode[example/42218279]"
+state = "6fb0c1e60efd20bac5ad9f23a2b9112c7ea18b4a20040c02e5337cb77b0436ce"
+
+[task.depends_on]
+"ae_pipeline/data/example.parquet" = "8868cc6b49b7699df454379c4eb637cb5b99e4890c7adffa73131d7b77d57a91"
+"ae_pipeline/waveforms/task_waveforms.py::task_waveform_decode[example/42218279]::time" = "0"
+
+[task.produces]
+"ae_pipeline/waveforms/example/42218279/signal.parquet" = "b7c4190703e7b9e3883e8abb36fae2d621ecdc37b57a5f42f8c951c3d838eee0"
+
+[[task]]
+id = "ae_pipeline/waveforms/task_waveforms.py::task_waveform_decode[example/42230074]"
+state = "6fb0c1e60efd20bac5ad9f23a2b9112c7ea18b4a20040c02e5337cb77b0436ce"
+
+[task.depends_on]
+"ae_pipeline/data/example.parquet" = "8868cc6b49b7699df454379c4eb637cb5b99e4890c7adffa73131d7b77d57a91"
+"ae_pipeline/waveforms/task_waveforms.py::task_waveform_decode[example/42230074]::time" = "0"
+
+[task.produces]
+"ae_pipeline/waveforms/example/42230074/signal.parquet" = "0b59373f3d47f29c757f3eea2b65a6a39c9df076e241ed138ef9d2eea9a7f2d8"
+
+[[task]]
+id = "ae_pipeline/waveforms/task_waveforms.py::task_waveform_decode[test/1024]"
+state = "6fb0c1e60efd20bac5ad9f23a2b9112c7ea18b4a20040c02e5337cb77b0436ce"
+
+[task.depends_on]
+"ae_pipeline/data/test.parquet" = "21be789abd80e5a394342afe13cab54e95a3bdc32fb179ea5116b590cd0c23d9"
+"ae_pipeline/waveforms/task_waveforms.py::task_waveform_decode[test/1024]::time" = "0"
+
+[task.produces]
+"ae_pipeline/waveforms/test/1024/signal.parquet" = "bf8c181269a06ad2b4e96b881ea201daf3b56ca14c27a813d42e028e690144a3"
+
+[[task]]
 id = "ae_pipeline/waveforms/task_waveforms.py::task_waveform_fft"
-state = "cdacbcab9a40a34b2c1df6d01a5e115303e74069a5d664d5ac6bcedaea41304c"
+state = "6fb0c1e60efd20bac5ad9f23a2b9112c7ea18b4a20040c02e5337cb77b0436ce"
 
 [task.depends_on]
 "ae_pipeline/waveforms/task_waveforms.py::task_waveform_fft::time" = "0"
@@ -94,8 +259,250 @@ state = "cdacbcab9a40a34b2c1df6d01a5e115303e74069a5d664d5ac6bcedaea41304c"
 "ae_pipeline/waveforms/test/1024/fft.parquet" = "ef7003ccfcf35ea4926d2ff8b29691c0758cd5bef2233ff506c38eb1a7375626"
 
 [[task]]
+id = "ae_pipeline/waveforms/task_waveforms.py::task_waveform_fft[example/41641073]"
+state = "6fb0c1e60efd20bac5ad9f23a2b9112c7ea18b4a20040c02e5337cb77b0436ce"
+
+[task.depends_on]
+"ae_pipeline/waveforms/example/41641073/signal.parquet" = "329934b7d3d9bf381ed82723d7ba46175ff62f2a2d09d698cab5f6ddc5f272dd"
+"ae_pipeline/waveforms/task_waveforms.py::task_waveform_fft[example/41641073]::time" = "0"
+
+[task.produces]
+"ae_pipeline/waveforms/example/41641073/fft.parquet" = "f3621afa4c0f507ef27d08bffc6bc1e7569a7a2dec19ccbf0d93883daea03727"
+
+[[task]]
+id = "ae_pipeline/waveforms/task_waveforms.py::task_waveform_fft[example/42011803]"
+state = "6fb0c1e60efd20bac5ad9f23a2b9112c7ea18b4a20040c02e5337cb77b0436ce"
+
+[task.depends_on]
+"ae_pipeline/waveforms/example/42011803/signal.parquet" = "8db220cd431e6fe3d4baaef2d2cdee99632edeac65b65145d8f9323101e4222a"
+"ae_pipeline/waveforms/task_waveforms.py::task_waveform_fft[example/42011803]::time" = "0"
+
+[task.produces]
+"ae_pipeline/waveforms/example/42011803/fft.parquet" = "46d799f37dedb97e686df385f634cf04979c24848b18eb6aacd2867ffe6bd289"
+
+[[task]]
+id = "ae_pipeline/waveforms/task_waveforms.py::task_waveform_fft[example/42125219]"
+state = "6fb0c1e60efd20bac5ad9f23a2b9112c7ea18b4a20040c02e5337cb77b0436ce"
+
+[task.depends_on]
+"ae_pipeline/waveforms/example/42125219/signal.parquet" = "5f411327b937f971ebb97260a520802bbcd4247e1119d6d3d02a8682152d2521"
+"ae_pipeline/waveforms/task_waveforms.py::task_waveform_fft[example/42125219]::time" = "0"
+
+[task.produces]
+"ae_pipeline/waveforms/example/42125219/fft.parquet" = "b0f51489e37e1f4c832f79aa72f22c489142a2cefa7bd0aef48f24af4d219a4d"
+
+[[task]]
+id = "ae_pipeline/waveforms/task_waveforms.py::task_waveform_fft[example/42137890]"
+state = "6fb0c1e60efd20bac5ad9f23a2b9112c7ea18b4a20040c02e5337cb77b0436ce"
+
+[task.depends_on]
+"ae_pipeline/waveforms/example/42137890/signal.parquet" = "16ef697b49ae7bdb364980898b729baf6c1586a1d9fed70acc7827a4fd0f02a0"
+"ae_pipeline/waveforms/task_waveforms.py::task_waveform_fft[example/42137890]::time" = "0"
+
+[task.produces]
+"ae_pipeline/waveforms/example/42137890/fft.parquet" = "53adf6ac2fd4bb9b455b1b4ef3728a9381da0c1ce664a39214c7ce57209c1f4c"
+
+[[task]]
+id = "ae_pipeline/waveforms/task_waveforms.py::task_waveform_fft[example/42159151]"
+state = "6fb0c1e60efd20bac5ad9f23a2b9112c7ea18b4a20040c02e5337cb77b0436ce"
+
+[task.depends_on]
+"ae_pipeline/waveforms/example/42159151/signal.parquet" = "1df76b3f12b6e17d04c6ed76f27a9667e6e3f2bbb7e4f8066d0289bea817bb67"
+"ae_pipeline/waveforms/task_waveforms.py::task_waveform_fft[example/42159151]::time" = "0"
+
+[task.produces]
+"ae_pipeline/waveforms/example/42159151/fft.parquet" = "6418d12a4b2e9ae6620db33b83789b28cf470e8b36ec74f4ad4e7394682a5703"
+
+[[task]]
+id = "ae_pipeline/waveforms/task_waveforms.py::task_waveform_fft[example/42169776]"
+state = "6fb0c1e60efd20bac5ad9f23a2b9112c7ea18b4a20040c02e5337cb77b0436ce"
+
+[task.depends_on]
+"ae_pipeline/waveforms/example/42169776/signal.parquet" = "faecfa44f5eada708f3ae2ff26fec7bca5b2fec1a730741d56b8102d047c40ba"
+"ae_pipeline/waveforms/task_waveforms.py::task_waveform_fft[example/42169776]::time" = "0"
+
+[task.produces]
+"ae_pipeline/waveforms/example/42169776/fft.parquet" = "e802d4eae21b8c6c3d14b34e606548602af594b020621f550c09f553c41bb65e"
+
+[[task]]
+id = "ae_pipeline/waveforms/task_waveforms.py::task_waveform_fft[example/42191544]"
+state = "6fb0c1e60efd20bac5ad9f23a2b9112c7ea18b4a20040c02e5337cb77b0436ce"
+
+[task.depends_on]
+"ae_pipeline/waveforms/example/42191544/signal.parquet" = "d773d1bd38bdb3eb74bff0e24ef0f19aca8a620da753c5b937dc0f60183dee1b"
+"ae_pipeline/waveforms/task_waveforms.py::task_waveform_fft[example/42191544]::time" = "0"
+
+[task.produces]
+"ae_pipeline/waveforms/example/42191544/fft.parquet" = "0401aa93f03a7e38fb1531ca053c29203e5bfe371e0788ceb460b49be3fe36b0"
+
+[[task]]
+id = "ae_pipeline/waveforms/task_waveforms.py::task_waveform_fft[example/42207531]"
+state = "6fb0c1e60efd20bac5ad9f23a2b9112c7ea18b4a20040c02e5337cb77b0436ce"
+
+[task.depends_on]
+"ae_pipeline/waveforms/example/42207531/signal.parquet" = "da0d0f4152ae3754da4081136ab3db62e396fb4f7504bd28fd98dfea38789524"
+"ae_pipeline/waveforms/task_waveforms.py::task_waveform_fft[example/42207531]::time" = "0"
+
+[task.produces]
+"ae_pipeline/waveforms/example/42207531/fft.parquet" = "705141f653754679050093fc1e88e73aec00ce256ffb7d61caf302b7a966c144"
+
+[[task]]
+id = "ae_pipeline/waveforms/task_waveforms.py::task_waveform_fft[example/42218279]"
+state = "6fb0c1e60efd20bac5ad9f23a2b9112c7ea18b4a20040c02e5337cb77b0436ce"
+
+[task.depends_on]
+"ae_pipeline/waveforms/example/42218279/signal.parquet" = "b7c4190703e7b9e3883e8abb36fae2d621ecdc37b57a5f42f8c951c3d838eee0"
+"ae_pipeline/waveforms/task_waveforms.py::task_waveform_fft[example/42218279]::time" = "0"
+
+[task.produces]
+"ae_pipeline/waveforms/example/42218279/fft.parquet" = "1234b72bc9336d66451cf3eb2cdbe71e5e95dc0ea8c7b777624194a289b2b39f"
+
+[[task]]
+id = "ae_pipeline/waveforms/task_waveforms.py::task_waveform_fft[example/42230074]"
+state = "6fb0c1e60efd20bac5ad9f23a2b9112c7ea18b4a20040c02e5337cb77b0436ce"
+
+[task.depends_on]
+"ae_pipeline/waveforms/example/42230074/signal.parquet" = "0b59373f3d47f29c757f3eea2b65a6a39c9df076e241ed138ef9d2eea9a7f2d8"
+"ae_pipeline/waveforms/task_waveforms.py::task_waveform_fft[example/42230074]::time" = "0"
+
+[task.produces]
+"ae_pipeline/waveforms/example/42230074/fft.parquet" = "b6f40479795aa7647d1a27bafda9b1d70bfd506be40ab5e4879068bb0597b91d"
+
+[[task]]
+id = "ae_pipeline/waveforms/task_waveforms.py::task_waveform_fft[test/1024]"
+state = "6fb0c1e60efd20bac5ad9f23a2b9112c7ea18b4a20040c02e5337cb77b0436ce"
+
+[task.depends_on]
+"ae_pipeline/waveforms/task_waveforms.py::task_waveform_fft[test/1024]::time" = "0"
+"ae_pipeline/waveforms/test/1024/signal.parquet" = "bf8c181269a06ad2b4e96b881ea201daf3b56ca14c27a813d42e028e690144a3"
+
+[task.produces]
+"ae_pipeline/waveforms/test/1024/fft.parquet" = "ef7003ccfcf35ea4926d2ff8b29691c0758cd5bef2233ff506c38eb1a7375626"
+
+[[task]]
 id = "ae_pipeline/waveforms/task_waveforms.py::task_waveform_fft_plot"
-state = "cdacbcab9a40a34b2c1df6d01a5e115303e74069a5d664d5ac6bcedaea41304c"
+state = "6fb0c1e60efd20bac5ad9f23a2b9112c7ea18b4a20040c02e5337cb77b0436ce"
+
+[task.depends_on]
+"ae_pipeline/waveforms/test/1024/fft.parquet" = "ef7003ccfcf35ea4926d2ff8b29691c0758cd5bef2233ff506c38eb1a7375626"
+
+[task.produces]
+"ae_pipeline/waveforms/test/1024/fft.pdf" = "a50ae45df9f14ab8de3bdf510b905f41619bd93f73c0cb7cbe79f16d7f05d710"
+"ae_pipeline/waveforms/test/1024/fft.png" = "b69a76fc18106ae2cdd17bdd81dbe28adf5ccfadffa2b3418b6fdec74f1b47e9"
+
+[[task]]
+id = "ae_pipeline/waveforms/task_waveforms.py::task_waveform_fft_plot[example/41641073]"
+state = "6fb0c1e60efd20bac5ad9f23a2b9112c7ea18b4a20040c02e5337cb77b0436ce"
+
+[task.depends_on]
+"ae_pipeline/waveforms/example/41641073/fft.parquet" = "f3621afa4c0f507ef27d08bffc6bc1e7569a7a2dec19ccbf0d93883daea03727"
+
+[task.produces]
+"ae_pipeline/waveforms/example/41641073/fft.pdf" = "af02e356b9065c5c2fa3e621176e90fd253ce71eade276bbcfa1b0e34310cc8d"
+"ae_pipeline/waveforms/example/41641073/fft.png" = "a3fb7453d243c86e11ea3288225fbb8c596b70dc394fe26549719a82060ba874"
+
+[[task]]
+id = "ae_pipeline/waveforms/task_waveforms.py::task_waveform_fft_plot[example/42011803]"
+state = "6fb0c1e60efd20bac5ad9f23a2b9112c7ea18b4a20040c02e5337cb77b0436ce"
+
+[task.depends_on]
+"ae_pipeline/waveforms/example/42011803/fft.parquet" = "46d799f37dedb97e686df385f634cf04979c24848b18eb6aacd2867ffe6bd289"
+
+[task.produces]
+"ae_pipeline/waveforms/example/42011803/fft.pdf" = "e1f4f8f2648170675d53bbd5b2a3780010a04d630012ecde6fcf63291e666a5f"
+"ae_pipeline/waveforms/example/42011803/fft.png" = "bbb869e3345ea88373ceedd23d97d3a2ac32221b13d41536838d2dc4818762e0"
+
+[[task]]
+id = "ae_pipeline/waveforms/task_waveforms.py::task_waveform_fft_plot[example/42125219]"
+state = "6fb0c1e60efd20bac5ad9f23a2b9112c7ea18b4a20040c02e5337cb77b0436ce"
+
+[task.depends_on]
+"ae_pipeline/waveforms/example/42125219/fft.parquet" = "b0f51489e37e1f4c832f79aa72f22c489142a2cefa7bd0aef48f24af4d219a4d"
+
+[task.produces]
+"ae_pipeline/waveforms/example/42125219/fft.pdf" = "9ee98f9609aa08a6c61ac3e8e0c5999f9e5caa3ab2a5116e877aee48a80486fb"
+"ae_pipeline/waveforms/example/42125219/fft.png" = "e7a7513710394b87db8eef1a6478877556a9958bcfdbc7b7bd7611d766964cce"
+
+[[task]]
+id = "ae_pipeline/waveforms/task_waveforms.py::task_waveform_fft_plot[example/42137890]"
+state = "6fb0c1e60efd20bac5ad9f23a2b9112c7ea18b4a20040c02e5337cb77b0436ce"
+
+[task.depends_on]
+"ae_pipeline/waveforms/example/42137890/fft.parquet" = "53adf6ac2fd4bb9b455b1b4ef3728a9381da0c1ce664a39214c7ce57209c1f4c"
+
+[task.produces]
+"ae_pipeline/waveforms/example/42137890/fft.pdf" = "0fdad3aa915bd12a6866ba6dcd65bc0e41c40f4d0e0c20898e98bd9306e907dc"
+"ae_pipeline/waveforms/example/42137890/fft.png" = "27266f4298caa506f470d5529911d0487df217966318b3e20d23df1f38ba9574"
+
+[[task]]
+id = "ae_pipeline/waveforms/task_waveforms.py::task_waveform_fft_plot[example/42159151]"
+state = "6fb0c1e60efd20bac5ad9f23a2b9112c7ea18b4a20040c02e5337cb77b0436ce"
+
+[task.depends_on]
+"ae_pipeline/waveforms/example/42159151/fft.parquet" = "6418d12a4b2e9ae6620db33b83789b28cf470e8b36ec74f4ad4e7394682a5703"
+
+[task.produces]
+"ae_pipeline/waveforms/example/42159151/fft.pdf" = "7fdb38a14323f13206e63992abfaf3d377f0bc1fb078ec5e2423aa9aca73ee51"
+"ae_pipeline/waveforms/example/42159151/fft.png" = "b2336d83c8b5a6981a042f70b7a2482a128ed314ce1cff5281cd9608d7376fe2"
+
+[[task]]
+id = "ae_pipeline/waveforms/task_waveforms.py::task_waveform_fft_plot[example/42169776]"
+state = "6fb0c1e60efd20bac5ad9f23a2b9112c7ea18b4a20040c02e5337cb77b0436ce"
+
+[task.depends_on]
+"ae_pipeline/waveforms/example/42169776/fft.parquet" = "e802d4eae21b8c6c3d14b34e606548602af594b020621f550c09f553c41bb65e"
+
+[task.produces]
+"ae_pipeline/waveforms/example/42169776/fft.pdf" = "1e1b3d776f6642a3a62ab3898fdecd26a0c2152e20d2108ea6838ce1cf4b1561"
+"ae_pipeline/waveforms/example/42169776/fft.png" = "4313cfddb8312c9961b645dd7c7873e92dd12ab52841b2183f0be7b91cbf08f8"
+
+[[task]]
+id = "ae_pipeline/waveforms/task_waveforms.py::task_waveform_fft_plot[example/42191544]"
+state = "6fb0c1e60efd20bac5ad9f23a2b9112c7ea18b4a20040c02e5337cb77b0436ce"
+
+[task.depends_on]
+"ae_pipeline/waveforms/example/42191544/fft.parquet" = "0401aa93f03a7e38fb1531ca053c29203e5bfe371e0788ceb460b49be3fe36b0"
+
+[task.produces]
+"ae_pipeline/waveforms/example/42191544/fft.pdf" = "c3e51fce8a318e89e1ffe7fcce596a45893385f355ba24281d754cc77209dba8"
+"ae_pipeline/waveforms/example/42191544/fft.png" = "d4f38aadf9d6ebfd90ec5caa5bd90266696ddbe33180b15282dc60556a93e74a"
+
+[[task]]
+id = "ae_pipeline/waveforms/task_waveforms.py::task_waveform_fft_plot[example/42207531]"
+state = "6fb0c1e60efd20bac5ad9f23a2b9112c7ea18b4a20040c02e5337cb77b0436ce"
+
+[task.depends_on]
+"ae_pipeline/waveforms/example/42207531/fft.parquet" = "705141f653754679050093fc1e88e73aec00ce256ffb7d61caf302b7a966c144"
+
+[task.produces]
+"ae_pipeline/waveforms/example/42207531/fft.pdf" = "a1ca466b4d29af86a0c746f0a7bc0430fe6a4e89b78dc010d75af3132a6c3401"
+"ae_pipeline/waveforms/example/42207531/fft.png" = "af3d55267bf2d107e9a1411835ffe7dd26df6a2f0acf8f9566eb5f37f4fe11cd"
+
+[[task]]
+id = "ae_pipeline/waveforms/task_waveforms.py::task_waveform_fft_plot[example/42218279]"
+state = "6fb0c1e60efd20bac5ad9f23a2b9112c7ea18b4a20040c02e5337cb77b0436ce"
+
+[task.depends_on]
+"ae_pipeline/waveforms/example/42218279/fft.parquet" = "1234b72bc9336d66451cf3eb2cdbe71e5e95dc0ea8c7b777624194a289b2b39f"
+
+[task.produces]
+"ae_pipeline/waveforms/example/42218279/fft.pdf" = "ccc121edc80992882494ab9ed630f5751bc4b1470cfef59b65a0fec08e4f3eeb"
+"ae_pipeline/waveforms/example/42218279/fft.png" = "49421cba48dcc4eab9311df26b9711d9c71daee03ab68b42fdd7c2c497d0ec52"
+
+[[task]]
+id = "ae_pipeline/waveforms/task_waveforms.py::task_waveform_fft_plot[example/42230074]"
+state = "6fb0c1e60efd20bac5ad9f23a2b9112c7ea18b4a20040c02e5337cb77b0436ce"
+
+[task.depends_on]
+"ae_pipeline/waveforms/example/42230074/fft.parquet" = "b6f40479795aa7647d1a27bafda9b1d70bfd506be40ab5e4879068bb0597b91d"
+
+[task.produces]
+"ae_pipeline/waveforms/example/42230074/fft.pdf" = "5cfe0ccb1ead6c340b104c396ad9a466c78dcbff3e734f22e9e8070663d4805a"
+"ae_pipeline/waveforms/example/42230074/fft.png" = "a804f67c72191f081f462db146e051dad9ca877c706c475920887aacf14b364b"
+
+[[task]]
+id = "ae_pipeline/waveforms/task_waveforms.py::task_waveform_fft_plot[test/1024]"
+state = "6fb0c1e60efd20bac5ad9f23a2b9112c7ea18b4a20040c02e5337cb77b0436ce"
 
 [task.depends_on]
 "ae_pipeline/waveforms/test/1024/fft.parquet" = "ef7003ccfcf35ea4926d2ff8b29691c0758cd5bef2233ff506c38eb1a7375626"
@@ -106,7 +513,128 @@ state = "cdacbcab9a40a34b2c1df6d01a5e115303e74069a5d664d5ac6bcedaea41304c"
 
 [[task]]
 id = "ae_pipeline/waveforms/task_waveforms.py::task_waveform_plot"
-state = "cdacbcab9a40a34b2c1df6d01a5e115303e74069a5d664d5ac6bcedaea41304c"
+state = "6fb0c1e60efd20bac5ad9f23a2b9112c7ea18b4a20040c02e5337cb77b0436ce"
+
+[task.depends_on]
+"ae_pipeline/waveforms/test/1024/signal.parquet" = "bf8c181269a06ad2b4e96b881ea201daf3b56ca14c27a813d42e028e690144a3"
+
+[task.produces]
+"ae_pipeline/waveforms/test/1024/signal.pdf" = "6d4afed95bd2383ca7d89931a28a911962d4b4cebded7c7a2504340c33d9b2e1"
+"ae_pipeline/waveforms/test/1024/signal.png" = "59ab1a34055d5fbe7e24a13a89ca420e1544ffef4e2751d69f38b7e6b09eab37"
+
+[[task]]
+id = "ae_pipeline/waveforms/task_waveforms.py::task_waveform_plot[example/41641073]"
+state = "6fb0c1e60efd20bac5ad9f23a2b9112c7ea18b4a20040c02e5337cb77b0436ce"
+
+[task.depends_on]
+"ae_pipeline/waveforms/example/41641073/signal.parquet" = "329934b7d3d9bf381ed82723d7ba46175ff62f2a2d09d698cab5f6ddc5f272dd"
+
+[task.produces]
+"ae_pipeline/waveforms/example/41641073/signal.pdf" = "1136a4437a6ce6156723cf8bfdf7b342f38596600d1ee5c9272af4b37aa0a7dc"
+"ae_pipeline/waveforms/example/41641073/signal.png" = "f94823dbe4c962384fec44e17437cf44454718a340c64022bfa8898d2cf20d84"
+
+[[task]]
+id = "ae_pipeline/waveforms/task_waveforms.py::task_waveform_plot[example/42011803]"
+state = "6fb0c1e60efd20bac5ad9f23a2b9112c7ea18b4a20040c02e5337cb77b0436ce"
+
+[task.depends_on]
+"ae_pipeline/waveforms/example/42011803/signal.parquet" = "8db220cd431e6fe3d4baaef2d2cdee99632edeac65b65145d8f9323101e4222a"
+
+[task.produces]
+"ae_pipeline/waveforms/example/42011803/signal.pdf" = "9abcf9ac8e22078e1d85c7b4a2d3d2cd8ae4103651b9977446eaf3a9ee2e53ef"
+"ae_pipeline/waveforms/example/42011803/signal.png" = "a0290de720b8060a734801db3c624f5503db5f9f1e3ca43c97964d424e025e16"
+
+[[task]]
+id = "ae_pipeline/waveforms/task_waveforms.py::task_waveform_plot[example/42125219]"
+state = "6fb0c1e60efd20bac5ad9f23a2b9112c7ea18b4a20040c02e5337cb77b0436ce"
+
+[task.depends_on]
+"ae_pipeline/waveforms/example/42125219/signal.parquet" = "5f411327b937f971ebb97260a520802bbcd4247e1119d6d3d02a8682152d2521"
+
+[task.produces]
+"ae_pipeline/waveforms/example/42125219/signal.pdf" = "2e72a20411310af20385f823d7a64ab96381bcedd7f61978c771e4967c9a5f14"
+"ae_pipeline/waveforms/example/42125219/signal.png" = "06225e59dd443a49c7fc3d5b0f941a37bb98f22ed709be33b8345351665ed865"
+
+[[task]]
+id = "ae_pipeline/waveforms/task_waveforms.py::task_waveform_plot[example/42137890]"
+state = "6fb0c1e60efd20bac5ad9f23a2b9112c7ea18b4a20040c02e5337cb77b0436ce"
+
+[task.depends_on]
+"ae_pipeline/waveforms/example/42137890/signal.parquet" = "16ef697b49ae7bdb364980898b729baf6c1586a1d9fed70acc7827a4fd0f02a0"
+
+[task.produces]
+"ae_pipeline/waveforms/example/42137890/signal.pdf" = "3affd7c73748266ed78a133ade8d71ee5a279bf9bb9ee2a90d0f0d4a1953af59"
+"ae_pipeline/waveforms/example/42137890/signal.png" = "3798244e911c0adbd66b34f6457cd5d4acef573c3c050118bfa936ea83f6fe33"
+
+[[task]]
+id = "ae_pipeline/waveforms/task_waveforms.py::task_waveform_plot[example/42159151]"
+state = "6fb0c1e60efd20bac5ad9f23a2b9112c7ea18b4a20040c02e5337cb77b0436ce"
+
+[task.depends_on]
+"ae_pipeline/waveforms/example/42159151/signal.parquet" = "1df76b3f12b6e17d04c6ed76f27a9667e6e3f2bbb7e4f8066d0289bea817bb67"
+
+[task.produces]
+"ae_pipeline/waveforms/example/42159151/signal.pdf" = "f72a371c6f8ac60f003e8e5cff17bd6fe9354d4bf40b0838d7adbe3284c37770"
+"ae_pipeline/waveforms/example/42159151/signal.png" = "41fe3468c0e526f41367b9f9ff0a1ec37d310b4fc703b044e9a1fc63aecdf34b"
+
+[[task]]
+id = "ae_pipeline/waveforms/task_waveforms.py::task_waveform_plot[example/42169776]"
+state = "6fb0c1e60efd20bac5ad9f23a2b9112c7ea18b4a20040c02e5337cb77b0436ce"
+
+[task.depends_on]
+"ae_pipeline/waveforms/example/42169776/signal.parquet" = "faecfa44f5eada708f3ae2ff26fec7bca5b2fec1a730741d56b8102d047c40ba"
+
+[task.produces]
+"ae_pipeline/waveforms/example/42169776/signal.pdf" = "7cc40e010d07ed5ce7e8d8e2c936757c3094bc8df5743229355b092204e05f95"
+"ae_pipeline/waveforms/example/42169776/signal.png" = "f3c28157daa1657243738a71c64736830ca890ca223431210d98bc7ef64cc327"
+
+[[task]]
+id = "ae_pipeline/waveforms/task_waveforms.py::task_waveform_plot[example/42191544]"
+state = "6fb0c1e60efd20bac5ad9f23a2b9112c7ea18b4a20040c02e5337cb77b0436ce"
+
+[task.depends_on]
+"ae_pipeline/waveforms/example/42191544/signal.parquet" = "d773d1bd38bdb3eb74bff0e24ef0f19aca8a620da753c5b937dc0f60183dee1b"
+
+[task.produces]
+"ae_pipeline/waveforms/example/42191544/signal.pdf" = "1ef8f60eeb3e41f7ec3ddb3d0399af738bfba49ff29acf4bc33911c5021b0a99"
+"ae_pipeline/waveforms/example/42191544/signal.png" = "8200ea37897e4376074362b5a6f241257dedc10dd80db7dbe9528b97e80fbf15"
+
+[[task]]
+id = "ae_pipeline/waveforms/task_waveforms.py::task_waveform_plot[example/42207531]"
+state = "6fb0c1e60efd20bac5ad9f23a2b9112c7ea18b4a20040c02e5337cb77b0436ce"
+
+[task.depends_on]
+"ae_pipeline/waveforms/example/42207531/signal.parquet" = "da0d0f4152ae3754da4081136ab3db62e396fb4f7504bd28fd98dfea38789524"
+
+[task.produces]
+"ae_pipeline/waveforms/example/42207531/signal.pdf" = "9fda9ac5cfb57147621db296ad56f392817153fd1652adf2d45a68e3b0121f02"
+"ae_pipeline/waveforms/example/42207531/signal.png" = "cbe375aaac5cfe758e95218577c0e753e7f79748a03d3de360949af7cdca7085"
+
+[[task]]
+id = "ae_pipeline/waveforms/task_waveforms.py::task_waveform_plot[example/42218279]"
+state = "6fb0c1e60efd20bac5ad9f23a2b9112c7ea18b4a20040c02e5337cb77b0436ce"
+
+[task.depends_on]
+"ae_pipeline/waveforms/example/42218279/signal.parquet" = "b7c4190703e7b9e3883e8abb36fae2d621ecdc37b57a5f42f8c951c3d838eee0"
+
+[task.produces]
+"ae_pipeline/waveforms/example/42218279/signal.pdf" = "fa6894a3f3dc9bac3c4e8fecce4e92e0afefd1711183a4ed6e5ed7c56fd94793"
+"ae_pipeline/waveforms/example/42218279/signal.png" = "3511c1bbd5107fbedc94ec848cf0fb9791ec22a81a7f9ed7405b4954dc722c44"
+
+[[task]]
+id = "ae_pipeline/waveforms/task_waveforms.py::task_waveform_plot[example/42230074]"
+state = "6fb0c1e60efd20bac5ad9f23a2b9112c7ea18b4a20040c02e5337cb77b0436ce"
+
+[task.depends_on]
+"ae_pipeline/waveforms/example/42230074/signal.parquet" = "0b59373f3d47f29c757f3eea2b65a6a39c9df076e241ed138ef9d2eea9a7f2d8"
+
+[task.produces]
+"ae_pipeline/waveforms/example/42230074/signal.pdf" = "cb71d94ed070d28bbc2e97c1d47655bf31be63da1f5da8e56d0b91e6efdc2046"
+"ae_pipeline/waveforms/example/42230074/signal.png" = "ceefbdf330d02ca6bfa3b77bb83ed8855fac3a23ec482ca3cfe57b333d00f32c"
+
+[[task]]
+id = "ae_pipeline/waveforms/task_waveforms.py::task_waveform_plot[test/1024]"
+state = "6fb0c1e60efd20bac5ad9f23a2b9112c7ea18b4a20040c02e5337cb77b0436ce"
 
 [task.depends_on]
 "ae_pipeline/waveforms/test/1024/signal.parquet" = "bf8c181269a06ad2b4e96b881ea201daf3b56ca14c27a813d42e028e690144a3"
