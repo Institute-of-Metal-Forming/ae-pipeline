@@ -2,6 +2,8 @@ from functools import cached_property
 from pathlib import Path
 from typing import Self
 
+import matplotlib as mpl
+import numpy as np
 from pydantic import BaseModel, computed_field, model_validator
 
 ROOT_DIR = Path(__file__).parent
@@ -44,3 +46,25 @@ class Dataset(BaseModel):
 
 
 DATASETS = [Dataset(primary_file=f) for f in AA_DATA_DIR.glob("*.pridb")]
+
+
+def mm_to_inch(v):
+    return np.asarray(v) / 25.4
+
+
+DEFAULT_FIGSIZE = mm_to_inch([160, 120])
+mpl.rcParams.update(
+    {
+        "figure.constrained_layout.use": True,
+        "figure.dpi": 600,
+        "figure.figsize": DEFAULT_FIGSIZE,
+        "lines.linewidth": 1,
+        "patch.linewidth": 1,
+        "contour.linewidth": 1,
+        "savefig.transparent": True,
+        "xtick.direction": "in",
+        "ytick.direction": "in",
+        "font.size": 8,
+        "grid.linewidth": 0.5,
+    }
+)

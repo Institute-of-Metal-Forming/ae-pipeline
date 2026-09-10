@@ -8,7 +8,7 @@ import pytask
 import soundfile as sf
 import sqlalchemy.types as st
 
-from ae_pipeline.config import AA_DATA_DIR
+from ae_pipeline.task_config import AA_DATA_DIR
 
 SAMPLING_RATE = 100_000
 FREQUENCIES = [1, 10, 100, 1_000, 10_000]

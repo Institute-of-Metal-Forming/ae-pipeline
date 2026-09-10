@@ -10,7 +10,7 @@ import scipy.fft as fft
 import soundfile as sf
 from matplotlib.figure import Figure
 
-from ae_pipeline.config import DATASETS
+from ae_pipeline.task_config import DATASETS
 
 for ds in DATASETS:
 
