@@ -46,6 +46,31 @@ class Dataset(BaseModel):
         return self
 
 
+class Waveform(BaseModel):
+    dataset: Dataset
+    time: int
+
+    @computed_field
+    @cached_property
+    def name(self) -> str:
+        return f"{self.dataset.name}/{self.time}"
+
+    @computed_field
+    @cached_property
+    def dir(self) -> Path:
+        return self.dataset.waveforms_dir / str(self.time)
+
+    @computed_field
+    @cached_property
+    def signal_file(self) -> Path:
+        return self.dir / "signal.parquet"
+
+    @computed_field
+    @cached_property
+    def fft_file(self) -> Path:
+        return self.dir / "fft.parquet"
+
+
 CATALOG = DataCatalog(name="ae-pipeline")
 
 
@@ -69,3 +94,7 @@ mpl.rcParams.update(
         "grid.linewidth": 0.5,
     }
 )
+
+
+def image_produces(base_path: Path, formats=["png", "pdf"]) -> list[Path]:
+    return [base_path.with_suffix(f".{f}") for f in formats]
