@@ -54,12 +54,9 @@ state = "696023e4e014f4f81f7734a43eb82486dcbba43c8f3dfb2a5614d9c709c75de4"
 
 [[task]]
 id = "ae_pipeline/waveforms/task_waveforms.py::task_waveforms"
-state = "cfcab87e828add10811bccd209e75c6ac2c11c26c980d9cfb8f31b51917d7f5f"
+state = "c6c0173f9ee6fb89c9324dfe50c1cfe296e7e7cc4371e2c857be2f3a66aa1bfa"
 
 [task.depends_on]
 "ae_pipeline/data/test.parquet" = "21be789abd80e5a394342afe13cab54e95a3bdc32fb179ea5116b590cd0c23d9"
 
 [task.produces]
-"ae_pipeline/waveforms/test/1024.png" = "24386482e681dd722fad3aecf2d32ab4b2f9cbd90c60a94dc8ec9023039625b0"
-"ae_pipeline/waveforms/test/waveform_1024.parquet" = "bf8c181269a06ad2b4e96b881ea201daf3b56ca14c27a813d42e028e690144a3"
-"ae_pipeline/waveforms/test/waveform_fft_1024.parquet" = "b27a4a808d2755797d33323ce20509a9edf1a72f3476ca492ce396ce85d1324f"

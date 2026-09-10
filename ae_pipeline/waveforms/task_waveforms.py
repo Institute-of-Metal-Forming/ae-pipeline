@@ -48,7 +48,7 @@ for ds in DATASETS:
             waveform_fft.to_parquet(waveform_dir / f"waveform_fft_{time}.parquet")
 
             fig = plot_waveform(waveform, waveform_fft)
-            fig.savefig(waveform_dir / f"{time}.png", dpi=600)
+            fig.savefig(waveform_dir / f"waveform_{time}.png", dpi=600)
 
 
 def plot_waveform(waveform: pd.DataFrame, waveform_fft: pd.DataFrame) -> Figure:
