@@ -20,6 +20,16 @@
 
   treefmt = {
     enable = true;
+    config.settings = {
+      excludes = [
+          ".*/*"
+          "_*/*"
+          "**/.*/*"
+          "**/_*/*"
+          ".gitignore"
+          "**/.gitignore"
+      ];
+    };
     config.programs = {
       nixfmt.enable = true;
       ruff.enable = true;
