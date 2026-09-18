@@ -10,8 +10,8 @@ import sqlalchemy.types as st
 
 from ae_pipeline.task_config import AA_DATA_DIR
 
-SAMPLING_RATE = 100_000
-FREQUENCIES = [1, 10, 100, 1_000, 10_000]
+SAMPLING_RATE = 10_000_000
+FREQUENCIES = [1_000, 10_000, 100_000, 200_000, 500_000]
 INTENSITIES = [1, 0.5, 0.2, 0.1, 0.05]
 
 
