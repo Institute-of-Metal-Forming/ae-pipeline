@@ -49,6 +49,7 @@ class Dataset(BaseModel):
 class Waveform(BaseModel):
     dataset: Dataset
     time: int
+    sample_rate: int
 
     @computed_field
     @cached_property

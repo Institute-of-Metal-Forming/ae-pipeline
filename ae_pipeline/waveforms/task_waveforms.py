@@ -19,7 +19,7 @@ def task_collect_waveforms(
         for ds in datasets:
             data = pd.read_parquet(ds.data_file)
             for time in data.index:
-                yield Waveform(dataset=ds, time=time)
+                yield Waveform(dataset=ds, time=time, sample_rate=data.loc[time, "SampleRate"])
 
     produces.save(list(yield_waveforms_for_datasets()))
 
@@ -34,15 +34,14 @@ def task_gen_waveforms(
         def task_waveform_decode(
             data_file=wf.dataset.data_file,
             produces=wf.signal_file,
-            time=wf.time,
+            wf=wf,
         ):
             data = pd.read_parquet(data_file)
-            flac_data = data.loc[time, "Data"]
-            sample_rate = data.loc[time, "SampleRate"]
+            flac_data = data.loc[wf.time, "Data"]
             sound_data, _ = sf.read(io.BytesIO(flac_data))
             signal = pd.DataFrame(
                 {
-                    "time": np.arange(0, len(sound_data)) / sample_rate,
+                    "time": np.arange(0, len(sound_data)) / wf.sample_rate,
                     "signal": sound_data,
                 }
             )
