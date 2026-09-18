@@ -10,6 +10,7 @@ import soundfile as sf
 from ae_pipeline.task_config import CATALOG, Dataset, Waveform, image_produces
 
 
+@pytask.task(after="task_import_aa_data")  # to prevent running before data files exist, currently no way
 def task_collect_waveforms(
     datasets: list[Dataset] = CATALOG["datasets"],  # type: ignore
     produces: pytask.PickleNode = CATALOG["waveforms"],  # type: ignore
