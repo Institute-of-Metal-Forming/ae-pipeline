@@ -71,6 +71,11 @@ class Waveform(BaseModel):
     def fft_file(self) -> Path:
         return self.dir / "fft.parquet"
 
+    @computed_field
+    @cached_property
+    def psd_file(self) -> Path:
+        return self.dir / "psd.parquet"
+
 
 CATALOG = DataCatalog(name="ae-pipeline")
 
@@ -93,6 +98,7 @@ mpl.rcParams.update(
         "ytick.direction": "in",
         "font.size": 8,
         "grid.linewidth": 0.5,
+        "agg.path.chunksize": 100_000,
     }
 )
 
