@@ -12,6 +12,7 @@
   languages.python = {
     enable = true;
     version = "3.14";
+    venv.enable = true;
     uv = {
       enable = true;
       sync.enable = true;
@@ -22,12 +23,12 @@
     enable = true;
     config.settings = {
       excludes = [
-          ".*/*"
-          "_*/*"
-          "**/.*/*"
-          "**/_*/*"
-          ".gitignore"
-          "**/.gitignore"
+        ".*/*"
+        "_*/*"
+        "**/.*/*"
+        "**/_*/*"
+        ".gitignore"
+        "**/.gitignore"
       ];
     };
     config.programs = {

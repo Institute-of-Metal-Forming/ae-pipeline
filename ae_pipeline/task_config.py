@@ -13,6 +13,8 @@ AA_DATA_DIR = ROOT_DIR / "aa_data"
 DATA_DIR = ROOT_DIR / "data"
 WAVEFORMS_DIR = ROOT_DIR / "waveforms"
 
+DEBUG = True
+
 
 class Dataset(BaseModel):
     primary_file: Path
@@ -48,7 +50,7 @@ class Dataset(BaseModel):
 
 class Waveform(BaseModel):
     dataset: Dataset
-    time: int
+    time: float
 
     @computed_field
     @cached_property
