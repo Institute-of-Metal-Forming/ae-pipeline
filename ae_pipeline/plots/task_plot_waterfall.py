@@ -65,6 +65,11 @@ for ds in DATASETS:
 
         if len(metadata["labels"]) <= 2:
             warn(f"Skipping generation of tasks for {ds.name} since count of labels is 2 or less.", stacklevel=2)
+
+            @pytask.task()
+            def plot_label_waterfall_dummy():
+                pass
+
             return
 
         for (label1, time1), (_, time2) in itertools.pairwise(metadata["labels"].items()):
