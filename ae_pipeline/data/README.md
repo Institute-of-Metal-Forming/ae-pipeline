@@ -1,7 +1,4 @@
-# AA Data Directory
-
-> [!NOTE]
-> AA means *as aquired*.
+# Data Directory
 
 Place here the data files aquired from the Vallen AE Suite Software, namely:
 

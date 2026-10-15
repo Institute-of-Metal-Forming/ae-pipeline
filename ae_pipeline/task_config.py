@@ -8,7 +8,7 @@ from pydantic import BaseModel, computed_field, model_validator
 
 ROOT_DIR = Path(__file__).parent
 
-AA_DATA_DIR = ROOT_DIR / "aa_data"
+DATA_DIR = ROOT_DIR / "data"
 PLOTS_DIR = ROOT_DIR / "plots"
 
 DEBUG = True
@@ -41,7 +41,7 @@ class Dataset(BaseModel):
         return self
 
 
-DATASETS = [Dataset(primary_file=f) for f in AA_DATA_DIR.glob("*.pridb")]
+DATASETS = [Dataset(primary_file=f) for f in DATA_DIR.glob("*.pridb")]
 
 
 def mm_to_inch(v):
