@@ -24,6 +24,7 @@ for ds in DATASETS:
             record_length = 0
 
             for record in tradb.iread():
+                sample_rate = record.samplerate
                 record_length = record.samples
                 break
 
@@ -31,6 +32,7 @@ for ds in DATASETS:
             "general": {
                 "channels": list(channels),
                 "clock_rate": int(globalinfo["TimeBase"]),
+                "sample_rate": sample_rate,
                 "record_length": record_length,
             },
             "labels": {str(m.data): m.time for m in markers.itertuples()},
