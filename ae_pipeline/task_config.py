@@ -5,7 +5,6 @@ from typing import Self
 import matplotlib as mpl
 import numpy as np
 from pydantic import BaseModel, computed_field, model_validator
-from pytask import DataCatalog
 
 ROOT_DIR = Path(__file__).parent
 
@@ -31,7 +30,7 @@ class Dataset(BaseModel):
     @computed_field
     @cached_property
     def metadata_file(self) -> Path:
-        return self.primary_file.with_suffix("metadata.toml")
+        return self.primary_file.with_suffix(".metadata.toml")
 
     @model_validator(mode="after")
     def validate_src_files_exist(self) -> Self:
@@ -52,7 +51,7 @@ def mm_to_inch(v):
 DEFAULT_FIGSIZE = mm_to_inch([160, 120])
 mpl.rcParams.update(
     {
-        "figure.constrained_layout.use": True,
+        "figure.autolayout": True,
         "figure.dpi": 600,
         "figure.figsize": DEFAULT_FIGSIZE,
         "lines.linewidth": 1,
