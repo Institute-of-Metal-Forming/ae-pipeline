@@ -1,2 +1,3 @@
-test.pridb
-test.tradb
+*.metadata.toml
+*.pridb
+*.tradb

@@ -10,8 +10,7 @@ from pytask import DataCatalog
 ROOT_DIR = Path(__file__).parent
 
 AA_DATA_DIR = ROOT_DIR / "aa_data"
-DATA_DIR = ROOT_DIR / "data"
-WAVEFORMS_DIR = ROOT_DIR / "waveforms"
+PLOTS_DIR = ROOT_DIR / "plots"
 
 DEBUG = True
 
@@ -31,13 +30,8 @@ class Dataset(BaseModel):
 
     @computed_field
     @cached_property
-    def data_file(self) -> Path:
-        return DATA_DIR / self.primary_file.with_suffix(".parquet").relative_to(AA_DATA_DIR)
-
-    @computed_field
-    @cached_property
-    def waveforms_dir(self) -> Path:
-        return WAVEFORMS_DIR / self.name
+    def metadata_file(self) -> Path:
+        return self.primary_file.with_suffix("metadata.toml")
 
     @model_validator(mode="after")
     def validate_src_files_exist(self) -> Self:
@@ -48,32 +42,7 @@ class Dataset(BaseModel):
         return self
 
 
-class Waveform(BaseModel):
-    dataset: Dataset
-    time: float
-
-    @computed_field
-    @cached_property
-    def name(self) -> str:
-        return f"{self.dataset.name}/{self.time}"
-
-    @computed_field
-    @cached_property
-    def dir(self) -> Path:
-        return self.dataset.waveforms_dir / str(self.time)
-
-    @computed_field
-    @cached_property
-    def signal_file(self) -> Path:
-        return self.dir / "signal.parquet"
-
-    @computed_field
-    @cached_property
-    def fft_file(self) -> Path:
-        return self.dir / "fft.parquet"
-
-
-CATALOG = DataCatalog(name="ae-pipeline")
+DATASETS = [Dataset(primary_file=f) for f in AA_DATA_DIR.glob("*.pridb")]
 
 
 def mm_to_inch(v):

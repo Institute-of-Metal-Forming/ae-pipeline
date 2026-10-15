@@ -5,10 +5,11 @@ id = "ae_pipeline/aa_data/task_collect_datasets.py::task_collect_datasets"
 state = "03f9f2df4de07192ead6a669dff8d53a3189e5b2a89e2c757088d61615d4c1be"
 
 [task.depends_on]
+"ae_pipeline/aa_data/2026-10-14-sack-01.pridb" = "5de0ca70bf8a36293c8b911c812b2af5009e73246b54d64d1a0d0b0a6a2ff19f"
 "ae_pipeline/aa_data/test_conti_2.pridb" = "b44a1404d711dff294d965869edbaeb80a562d7597cc235f941ed3da69c3ab6b"
 
 [task.produces]
-".pytask/data_catalogs/ae-pipeline/714284abfa95a1447d7c34554c2d65b16fcfb1af22a44fc15489d13b76e951e5.pkl" = "25225fcc133cd3ea91d1edc4d972f93829ea687c5f7dd034b107df88bb145495"
+".pytask/data_catalogs/ae-pipeline/714284abfa95a1447d7c34554c2d65b16fcfb1af22a44fc15489d13b76e951e5.pkl" = "129bbcb7709c741d6a6392e0537f0ceff8b5a41ba7282bdc7d3b4d42ebf2b57a"
 
 [[task]]
 id = "ae_pipeline/aa_data/task_create_test_data.py::task_create_test_data"
@@ -19,6 +20,26 @@ state = "41a4f836da06a99c8ad6400a1396f3e1aea013aefd3b0df11b11ab49fdb8a3b9"
 [task.produces]
 "ae_pipeline/aa_data/test.pridb" = "5d326deddda6b5c4bdd17c2cd9b5c6e2638e5357b3a43b086a443bf0d9ff5269"
 "ae_pipeline/aa_data/test.tradb" = "d68dc4e479abc98cc8d19f478b5a169abb5623a40680475811768b477db2d554"
+
+[[task]]
+id = "ae_pipeline/aa_data/task_extract_metadata.py::task_plot_extract_metadata[2026-10-14-sack-01]"
+state = "b5c6d73de19cea72e7a2ef99cb64540b3bf0d27bd34b47ebc5c00f7908f6f835"
+
+[task.depends_on]
+"ae_pipeline/aa_data/2026-10-14-sack-01.pridb" = "5de0ca70bf8a36293c8b911c812b2af5009e73246b54d64d1a0d0b0a6a2ff19f"
+
+[task.produces]
+"ae_pipeline/aa_data/2026-10-14-sack-01_metadata.toml" = "6a6f0d11ec1076542f4cea5408cfb5544ddf710361bd8ad3bf87806c17951387"
+
+[[task]]
+id = "ae_pipeline/aa_data/task_extract_metadata.py::task_plot_extract_metadata[test_conti_2]"
+state = "b5c6d73de19cea72e7a2ef99cb64540b3bf0d27bd34b47ebc5c00f7908f6f835"
+
+[task.depends_on]
+"ae_pipeline/aa_data/test_conti_2.pridb" = "b44a1404d711dff294d965869edbaeb80a562d7597cc235f941ed3da69c3ab6b"
+
+[task.produces]
+"ae_pipeline/aa_data/test_conti_2_metadata.toml" = "bcb6fc05ac28b5b5fa4521713b4ba0fc86e0f4a788e4fec3f67579ebcf240354"
 
 [[task]]
 id = "ae_pipeline/data/task_import_aa_data.py::task_describe_dataset"
@@ -103,6 +124,39 @@ state = "5f0fd3173d063a51ec9deff3d4051fa717c78d61fad08278d1970323ec5f8ba0"
 
 [task.produces]
 "ae_pipeline/data/test_conti.parquet" = "9fabdc5a70953982cde37a73b05a3f1da205bf8fbad209b4d12278c3518fcc02"
+
+[[task]]
+id = "ae_pipeline/plots/task_plot_waterfall.py::task_plot_waterfall"
+state = "cdfb4795bf295721fc2c76f25e5702a1211863a28b5dde07faaccdfc1bdf7e1b"
+
+[task.depends_on]
+"ae_pipeline/aa_data/test_conti_2.tradb" = "9d14b58ea77d80c91817b96c18bdb9602d2f9430dab4c708f54097d260bd76e8"
+
+[task.produces]
+"ae_pipeline/plots/test_conti_2/waterfall.pdf" = "566d5b9c6a86915375e71c069ecd0d0f54117584e62b613c49ca793ef92dbe4c"
+"ae_pipeline/plots/test_conti_2/waterfall.png" = "80ad9c16840ca6ecddce12480f99e0cb360a77d35e41d4cbc7cb286fd9201808"
+
+[[task]]
+id = "ae_pipeline/plots/task_plot_waterfall.py::task_plot_waterfall[2026-10-14-sack-01]"
+state = "ce8c83c28a59c7c2d7328d13a6ead3166f4fe91a8ae498276fbd1727f68b50c2"
+
+[task.depends_on]
+"ae_pipeline/aa_data/2026-10-14-sack-01.tradb" = "225f6475d442e10e2f5b2c29d6b3a250ae8120e8f4c6317e0e62ee0a57a1c90a"
+"ae_pipeline/aa_data/2026-10-14-sack-01_metadata.toml" = "6a6f0d11ec1076542f4cea5408cfb5544ddf710361bd8ad3bf87806c17951387"
+
+[task.produces]
+"ae_pipeline/plots/2026-10-14-sack-01/waterfall.png" = "734b0006f05b11964e80f4dcc4adb14ccc0abc79ef00bc7101e715836a939d18"
+
+[[task]]
+id = "ae_pipeline/plots/task_plot_waterfall.py::task_plot_waterfall[test_conti_2]"
+state = "876dd04648d819ab0d792acbc192a95030f747a615d5ee395b19c830e1822451"
+
+[task.depends_on]
+"ae_pipeline/aa_data/test_conti_2.tradb" = "9d14b58ea77d80c91817b96c18bdb9602d2f9430dab4c708f54097d260bd76e8"
+"ae_pipeline/aa_data/test_conti_2_metadata.toml" = "bcb6fc05ac28b5b5fa4521713b4ba0fc86e0f4a788e4fec3f67579ebcf240354"
+
+[task.produces]
+"ae_pipeline/plots/test_conti_2/waterfall.png" = "f2f6a53733fca770e2ec35eb245fb3bb5661ae92d69b624c8ad597b8ea2e0f42"
 
 [[task]]
 id = "ae_pipeline/task_import_aa_data.py::task_describe_dataset"
