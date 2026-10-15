@@ -136,8 +136,8 @@ def _plot_waterfall(transient_file: Path, start: float | None, end: float | None
             stft = ShortTimeFFT.from_window(
                 "hann",
                 sample_rate,
-                nperseg=sample_rate // 1000,
-                noverlap=sample_rate // 2000,
+                nperseg=2048,
+                noverlap=1024,
                 scale_to="psd",
             )
 
