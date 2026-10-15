@@ -1,6 +1,8 @@
 import itertools
+import re
 import tomllib
 from pathlib import Path
+from warnings import warn
 
 import matplotlib.colorizer as mcolorizer
 import matplotlib.colors as mcolors
@@ -24,17 +26,27 @@ for ds in DATASETS:
         fig, axs = _plot_waterfall(transient_file, None, None)
 
         metadata = tomllib.loads(metadata_file.read_text())
-        for time, label in metadata["labels"].items():
-            time = float(time)
+        for (label, time), (_, time2) in itertools.pairwise(metadata["labels"].items()):
+            if time2 - time < 1.0:
+                continue
+
+            if "Suspend" in label:
+                continue
+
+            match = re.fullmatch(r"(?P<time>\d+:\d+)\s(?P<msg>.*)", label)
+
+            if match:
+                label = f"{match['time']}\n{match['msg']}"
+
             for ax in axs:
                 ax.axvline(time, color="r", linewidth=1)
                 ax.annotate(
                     label,
                     (time, 1),
-                    (0.1, -2.1),
+                    (0.3, -3.3),
                     color="r",
                     ha="left",
-                    va="baseline",
+                    va="top",
                     xycoords=("data", "axes fraction"),
                     textcoords="offset fontsize",
                 )
@@ -51,9 +63,11 @@ for ds in DATASETS:
     ):
         metadata = tomllib.loads(metadata_file.read_text())
 
-        for (time1, label1), (time2, _) in itertools.pairwise(metadata["labels"].items()):
-            time1, time2 = float(time1), float(time2)
+        if len(metadata["labels"]) <= 2:
+            warn(f"Skipping generation of tasks for {ds.name} since count of labels is 2 or less.", stacklevel=2)
+            return
 
+        for (label1, time1), (_, time2) in itertools.pairwise(metadata["labels"].items()):
             if time2 - time1 < 2.0:
                 continue
 
@@ -136,7 +150,10 @@ def _plot_waterfall(transient_file: Path, start: float | None, end: float | None
                 extent=extent,
             )
 
-    cbar = fig.colorbar(img, cax=cax)
-    cbar.long_axis.set_label("Power Spectral Density in dB from 1 (mV)²/Hz")
+    fig.colorbar(
+        img,
+        cax=cax,
+        label="Power Spectral Density in dB from 1 (µV)²/Hz",
+    )
 
     return fig, axs

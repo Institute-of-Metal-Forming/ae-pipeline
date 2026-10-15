@@ -33,7 +33,7 @@ for ds in DATASETS:
                 "clock_rate": int(globalinfo["TimeBase"]),
                 "record_length": record_length,
             },
-            "labels": {f"{m.time:.2f}": str(m.data) for m in markers.itertuples()},
+            "labels": {str(m.data): m.time for m in markers.itertuples()},
         }
 
         text = tomli_w.dumps(metadata)
