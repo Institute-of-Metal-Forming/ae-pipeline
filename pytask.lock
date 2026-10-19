@@ -54,36 +54,36 @@ state = "b5c6d73de19cea72e7a2ef99cb64540b3bf0d27bd34b47ebc5c00f7908f6f835"
 
 [[task]]
 id = "ae_pipeline/data/task_extract_metadata.py::task_plot_extract_metadata"
-state = "356a2859355e2695112496cbdc748d350e665edf60c1fe3afc500acf7b0bfdca"
-
-[task.depends_on]
-"ae_pipeline/data/2026-10-14-sack-01.pridb" = "5de0ca70bf8a36293c8b911c812b2af5009e73246b54d64d1a0d0b0a6a2ff19f"
-"ae_pipeline/data/2026-10-14-sack-01.tradb" = "225f6475d442e10e2f5b2c29d6b3a250ae8120e8f4c6317e0e62ee0a57a1c90a"
-
-[task.produces]
-"ae_pipeline/data/2026-10-14-sack-01.metadata.toml" = "0936786803ffbcacfab7d5a1ab49970dc6e701a035b444175ce4bb0784d3d7f1"
-
-[[task]]
-id = "ae_pipeline/data/task_extract_metadata.py::task_plot_extract_metadata[2026-10-14-sack-01]"
-state = "69ae29d8b3e457af790f87b3cda6b6a65591a9240ecddce598ed6006465f2932"
-
-[task.depends_on]
-"ae_pipeline/data/2026-10-14-sack-01.pridb" = "5de0ca70bf8a36293c8b911c812b2af5009e73246b54d64d1a0d0b0a6a2ff19f"
-"ae_pipeline/data/2026-10-14-sack-01.tradb" = "225f6475d442e10e2f5b2c29d6b3a250ae8120e8f4c6317e0e62ee0a57a1c90a"
-
-[task.produces]
-"ae_pipeline/data/2026-10-14-sack-01.metadata.toml" = "69e28822080d6d2993b6c9a663efce85259320febb57e3d6e01e5ec0d17233a6"
-
-[[task]]
-id = "ae_pipeline/data/task_extract_metadata.py::task_plot_extract_metadata[2026-10-16-test-coherence]"
-state = "69ae29d8b3e457af790f87b3cda6b6a65591a9240ecddce598ed6006465f2932"
+state = "7a5661de7a33706c8d0cd23875b6f8d6f7d8c020ec3c2a36c4f923a5c22e1d48"
 
 [task.depends_on]
 "ae_pipeline/data/2026-10-16-test-coherence.pridb" = "1689a4f4c5d4d976203cec2b310914b31289db112cf66bda1949da0cdb844f41"
 "ae_pipeline/data/2026-10-16-test-coherence.tradb" = "15a06e9126a45f8b1edae51f09612ce36f59229262cf6bf7e56b5f4fff7f5a5a"
 
 [task.produces]
-"ae_pipeline/data/2026-10-16-test-coherence.metadata.toml" = "83cd950ebfbcccd3ec1d581ffc7a602a001cd7a31445e3ff30e713e5244e50f0"
+"ae_pipeline/data/2026-10-16-test-coherence.metadata.toml" = "2ee2c5cab618a391e1e8421cc9835f2387b8b64ecfa4af2d5046e6a16a3efe93"
+
+[[task]]
+id = "ae_pipeline/data/task_extract_metadata.py::task_plot_extract_metadata[2026-10-14-sack-01]"
+state = "7a5661de7a33706c8d0cd23875b6f8d6f7d8c020ec3c2a36c4f923a5c22e1d48"
+
+[task.depends_on]
+"ae_pipeline/data/2026-10-14-sack-01.pridb" = "5de0ca70bf8a36293c8b911c812b2af5009e73246b54d64d1a0d0b0a6a2ff19f"
+"ae_pipeline/data/2026-10-14-sack-01.tradb" = "225f6475d442e10e2f5b2c29d6b3a250ae8120e8f4c6317e0e62ee0a57a1c90a"
+
+[task.produces]
+"ae_pipeline/data/2026-10-14-sack-01.metadata.toml" = "5c36fe4554a9b064d1c75569d1767cc66cc67b3485f6d9fc5481c5ed18fe86ba"
+
+[[task]]
+id = "ae_pipeline/data/task_extract_metadata.py::task_plot_extract_metadata[2026-10-16-test-coherence]"
+state = "7a5661de7a33706c8d0cd23875b6f8d6f7d8c020ec3c2a36c4f923a5c22e1d48"
+
+[task.depends_on]
+"ae_pipeline/data/2026-10-16-test-coherence.pridb" = "1689a4f4c5d4d976203cec2b310914b31289db112cf66bda1949da0cdb844f41"
+"ae_pipeline/data/2026-10-16-test-coherence.tradb" = "15a06e9126a45f8b1edae51f09612ce36f59229262cf6bf7e56b5f4fff7f5a5a"
+
+[task.produces]
+"ae_pipeline/data/2026-10-16-test-coherence.metadata.toml" = "2ee2c5cab618a391e1e8421cc9835f2387b8b64ecfa4af2d5046e6a16a3efe93"
 
 [[task]]
 id = "ae_pipeline/data/task_extract_metadata.py::task_plot_extract_metadata[test_conti_2]"
@@ -181,6 +181,110 @@ state = "5f0fd3173d063a51ec9deff3d4051fa717c78d61fad08278d1970323ec5f8ba0"
 "ae_pipeline/data/test_conti.parquet" = "9fabdc5a70953982cde37a73b05a3f1da205bf8fbad209b4d12278c3518fcc02"
 
 [[task]]
+id = "ae_pipeline/plots/task_plot_edge_filter.py::plot_label_edge_filter_dummy"
+state = "82e1bf8ca09d7849ad2ba878e6bcbc664988bf2f57080361e4644b1502d32703"
+
+[task.depends_on]
+
+[task.produces]
+
+[[task]]
+id = "ae_pipeline/plots/task_plot_edge_filter.py::task_plot_edge_filter"
+state = "9ad3732374c938fd271bc2c82ecd6ebebbe0c653635c5acb24d11d3d5a336961"
+
+[task.depends_on]
+"ae_pipeline/data/2026-10-16-test-coherence.metadata.toml" = "2ee2c5cab618a391e1e8421cc9835f2387b8b64ecfa4af2d5046e6a16a3efe93"
+"ae_pipeline/data/2026-10-16-test-coherence.tradb" = "15a06e9126a45f8b1edae51f09612ce36f59229262cf6bf7e56b5f4fff7f5a5a"
+
+[task.produces]
+"ae_pipeline/plots/2026-10-16-test-coherence/edge_filter.png" = "cac50f68832d085363f8e2fadcf5e326a1544cf224759940b3d3d6054934fc16"
+
+[[task]]
+id = "ae_pipeline/plots/task_plot_edge_filter.py::task_plot_edge_filter[2026-10-14-sack-01]"
+state = "82e1bf8ca09d7849ad2ba878e6bcbc664988bf2f57080361e4644b1502d32703"
+
+[task.depends_on]
+"ae_pipeline/data/2026-10-14-sack-01.metadata.toml" = "5c36fe4554a9b064d1c75569d1767cc66cc67b3485f6d9fc5481c5ed18fe86ba"
+"ae_pipeline/data/2026-10-14-sack-01.tradb" = "225f6475d442e10e2f5b2c29d6b3a250ae8120e8f4c6317e0e62ee0a57a1c90a"
+
+[task.produces]
+"ae_pipeline/plots/2026-10-14-sack-01/edge_filter.png" = "fc09482e7d52564a4f6923ddd7a5c515b6fe281fd7f9d05f10bf7a1d9aa32251"
+
+[[task]]
+id = "ae_pipeline/plots/task_plot_edge_filter.py::task_plot_edge_filter[2026-10-16-test-coherence]"
+state = "82e1bf8ca09d7849ad2ba878e6bcbc664988bf2f57080361e4644b1502d32703"
+
+[task.depends_on]
+"ae_pipeline/data/2026-10-16-test-coherence.metadata.toml" = "2ee2c5cab618a391e1e8421cc9835f2387b8b64ecfa4af2d5046e6a16a3efe93"
+"ae_pipeline/data/2026-10-16-test-coherence.tradb" = "15a06e9126a45f8b1edae51f09612ce36f59229262cf6bf7e56b5f4fff7f5a5a"
+
+[task.produces]
+"ae_pipeline/plots/2026-10-16-test-coherence/edge_filter.png" = "9d594edc9e0628dbfcfdd0c67ce84c30c4dfd9bffe55ce9e413b41ac2605b527"
+
+[[task]]
+id = "ae_pipeline/plots/task_plot_edge_filter.py::task_plot_label_edge_filter[2026-10-14-sack-01/11:19 ruhe]"
+state = "82e1bf8ca09d7849ad2ba878e6bcbc664988bf2f57080361e4644b1502d32703"
+
+[task.depends_on]
+"ae_pipeline/data/2026-10-14-sack-01.tradb" = "225f6475d442e10e2f5b2c29d6b3a250ae8120e8f4c6317e0e62ee0a57a1c90a"
+"task_plot_label_edge_filter[2026-10-14-sack-01/11:36 alu loch]::times" = "0"
+
+[task.produces]
+"ae_pipeline/plots/2026-10-14-sack-01/edge_filter_11:19_ruhe.png" = "5fe64eb857b49defac1b79c4b88dabf701d91465188ca2241f26213484138e2e"
+
+[[task]]
+id = "ae_pipeline/plots/task_plot_edge_filter.py::task_plot_label_edge_filter[2026-10-14-sack-01/11:20 walze dreht]"
+state = "82e1bf8ca09d7849ad2ba878e6bcbc664988bf2f57080361e4644b1502d32703"
+
+[task.depends_on]
+"ae_pipeline/data/2026-10-14-sack-01.tradb" = "225f6475d442e10e2f5b2c29d6b3a250ae8120e8f4c6317e0e62ee0a57a1c90a"
+"task_plot_label_edge_filter[2026-10-14-sack-01/11:36 alu loch]::times" = "0"
+
+[task.produces]
+"ae_pipeline/plots/2026-10-14-sack-01/edge_filter_11:20_walze_dreht.png" = "774255d29d2cfb75b0cffb4b683bed6310fa84e922c49449cd6ad426fc2f0ca4"
+
+[[task]]
+id = "ae_pipeline/plots/task_plot_edge_filter.py::task_plot_label_edge_filter[2026-10-14-sack-01/11:21 antich alu]"
+state = "82e1bf8ca09d7849ad2ba878e6bcbc664988bf2f57080361e4644b1502d32703"
+
+[task.depends_on]
+"ae_pipeline/data/2026-10-14-sack-01.tradb" = "225f6475d442e10e2f5b2c29d6b3a250ae8120e8f4c6317e0e62ee0a57a1c90a"
+"task_plot_label_edge_filter[2026-10-14-sack-01/11:36 alu loch]::times" = "0"
+
+[task.produces]
+"ae_pipeline/plots/2026-10-14-sack-01/edge_filter_11:21_antich_alu.png" = "2baf616fd585c7089304efd548c5d0fe56d36f6215d732da4d1ab2fbf3045432"
+
+[[task]]
+id = "ae_pipeline/plots/task_plot_edge_filter.py::task_plot_label_edge_filter[2026-10-14-sack-01/11:35 alu körner]"
+state = "82e1bf8ca09d7849ad2ba878e6bcbc664988bf2f57080361e4644b1502d32703"
+
+[task.depends_on]
+"ae_pipeline/data/2026-10-14-sack-01.tradb" = "225f6475d442e10e2f5b2c29d6b3a250ae8120e8f4c6317e0e62ee0a57a1c90a"
+"task_plot_label_edge_filter[2026-10-14-sack-01/11:36 alu loch]::times" = "0"
+
+[task.produces]
+"ae_pipeline/plots/2026-10-14-sack-01/edge_filter_11:35_alu_körner.png" = "f77cdbf1e5d8e4ee8d52e07c66d2b5a0f1f548ab3704d645e586419ee6a5e56f"
+
+[[task]]
+id = "ae_pipeline/plots/task_plot_edge_filter.py::task_plot_label_edge_filter[2026-10-14-sack-01/11:36 alu loch]"
+state = "82e1bf8ca09d7849ad2ba878e6bcbc664988bf2f57080361e4644b1502d32703"
+
+[task.depends_on]
+"ae_pipeline/data/2026-10-14-sack-01.tradb" = "225f6475d442e10e2f5b2c29d6b3a250ae8120e8f4c6317e0e62ee0a57a1c90a"
+"task_plot_label_edge_filter[2026-10-14-sack-01/11:36 alu loch]::times" = "0"
+
+[task.produces]
+"ae_pipeline/plots/2026-10-14-sack-01/edge_filter_11:36_alu_loch.png" = "98d57c2c9f8fee0cd32dd7352cdb49df22cbe356d25788f6cc9428f10e9e3d3d"
+
+[[task]]
+id = "ae_pipeline/plots/task_plot_waterfall.py::plot_label_waterfall_dummy"
+state = "cb09d8cee2dc441013a78b05d5e7ea9189f2ba829a7771ec89e5a49dd07baea6"
+
+[task.depends_on]
+
+[task.produces]
+
+[[task]]
 id = "ae_pipeline/plots/task_plot_waterfall.py::task_plot_label_waterfall"
 state = "31dd8105229226d4764dd2569bb0c5043e34d96d1233c03414be895181a3d651"
 
@@ -193,36 +297,36 @@ state = "31dd8105229226d4764dd2569bb0c5043e34d96d1233c03414be895181a3d651"
 
 [[task]]
 id = "ae_pipeline/plots/task_plot_waterfall.py::task_plot_label_waterfall[2026-10-14-sack-01/11:19 ruhe]"
-state = "aadd0e8f46a59805507089b1c47dbdeac0a9d8ab9575cd5cdab37e121014fe1f"
+state = "cb09d8cee2dc441013a78b05d5e7ea9189f2ba829a7771ec89e5a49dd07baea6"
 
 [task.depends_on]
 "ae_pipeline/data/2026-10-14-sack-01.tradb" = "225f6475d442e10e2f5b2c29d6b3a250ae8120e8f4c6317e0e62ee0a57a1c90a"
 "task_plot_label_waterfall[2026-10-14-sack-01/11:36 alu loch]::times" = "0"
 
 [task.produces]
-"ae_pipeline/plots/2026-10-14-sack-01/waterfall_11:19_ruhe.png" = "f744ed83a75a37dc3b1eba942e1d9b63837caaf6e37fbe0e1d4f17c54ad291a1"
+"ae_pipeline/plots/2026-10-14-sack-01/waterfall_11:19_ruhe.png" = "43e5293e34fa62a70616e8bdacea7cdbfce08341510d871db9dcade4f0b92263"
 
 [[task]]
 id = "ae_pipeline/plots/task_plot_waterfall.py::task_plot_label_waterfall[2026-10-14-sack-01/11:20 walze dreht]"
-state = "4a8c534d58ee87740eda8cbe890c442bd125d6c89f9b17d6bf3e00272ca370ac"
+state = "cb09d8cee2dc441013a78b05d5e7ea9189f2ba829a7771ec89e5a49dd07baea6"
 
 [task.depends_on]
 "ae_pipeline/data/2026-10-14-sack-01.tradb" = "225f6475d442e10e2f5b2c29d6b3a250ae8120e8f4c6317e0e62ee0a57a1c90a"
 "task_plot_label_waterfall[2026-10-14-sack-01/11:36 alu loch]::times" = "0"
 
 [task.produces]
-"ae_pipeline/plots/2026-10-14-sack-01/waterfall_11:20_walze_dreht.png" = "f45ed8888207bd1cfb95da58b8f5dc6d96c7dd5a7befc6b29f59baf41352310d"
+"ae_pipeline/plots/2026-10-14-sack-01/waterfall_11:20_walze_dreht.png" = "45b3a455cfa560d220b56d343bf887df6f42c83db356663ec3b2fd7106a0e89c"
 
 [[task]]
 id = "ae_pipeline/plots/task_plot_waterfall.py::task_plot_label_waterfall[2026-10-14-sack-01/11:21 antich alu]"
-state = "4a8c534d58ee87740eda8cbe890c442bd125d6c89f9b17d6bf3e00272ca370ac"
+state = "cb09d8cee2dc441013a78b05d5e7ea9189f2ba829a7771ec89e5a49dd07baea6"
 
 [task.depends_on]
 "ae_pipeline/data/2026-10-14-sack-01.tradb" = "225f6475d442e10e2f5b2c29d6b3a250ae8120e8f4c6317e0e62ee0a57a1c90a"
-"task_plot_label_waterfall[2026-10-14-sack-01/11:36 alu loch]::times" = "0"
+"task_plot_label_edge_filter[2026-10-14-sack-01/11:36 alu loch]::times" = "0"
 
 [task.produces]
-"ae_pipeline/plots/2026-10-14-sack-01/waterfall_11:21_antich_alu.png" = "a683ced51e575a0dd9fa3b3617512dd5b977b1ac7d27d03463954dc38e3196ac"
+"ae_pipeline/plots/2026-10-14-sack-01/waterfall_11:21_antich_alu.png" = "63b43eb7c1d6753846ff2a3d87bbab76bdee511107bd83e0abd17231abd23703"
 
 [[task]]
 id = "ae_pipeline/plots/task_plot_waterfall.py::task_plot_label_waterfall[2026-10-14-sack-01/11:22 Suspend]"
@@ -237,58 +341,58 @@ state = "b1028341b4ab67a660399444fae7026cb0d5d2c79260e6ae27491b7ecbfedae8"
 
 [[task]]
 id = "ae_pipeline/plots/task_plot_waterfall.py::task_plot_label_waterfall[2026-10-14-sack-01/11:35 alu körner]"
-state = "4a8c534d58ee87740eda8cbe890c442bd125d6c89f9b17d6bf3e00272ca370ac"
+state = "cb09d8cee2dc441013a78b05d5e7ea9189f2ba829a7771ec89e5a49dd07baea6"
 
 [task.depends_on]
 "ae_pipeline/data/2026-10-14-sack-01.tradb" = "225f6475d442e10e2f5b2c29d6b3a250ae8120e8f4c6317e0e62ee0a57a1c90a"
 "task_plot_label_waterfall[2026-10-14-sack-01/11:36 alu loch]::times" = "0"
 
 [task.produces]
-"ae_pipeline/plots/2026-10-14-sack-01/waterfall_11:35_alu_körner.png" = "fcd25e531d37ec8eb132b783fa09c3f51efc6c707dc7d5beeb420d65ea96ebc4"
+"ae_pipeline/plots/2026-10-14-sack-01/waterfall_11:35_alu_körner.png" = "89709246eee4a307da7e333815ed8681a00c6599bc1bac44c7731dfae23222de"
 
 [[task]]
 id = "ae_pipeline/plots/task_plot_waterfall.py::task_plot_label_waterfall[2026-10-14-sack-01/11:36 alu loch]"
-state = "aadd0e8f46a59805507089b1c47dbdeac0a9d8ab9575cd5cdab37e121014fe1f"
+state = "cb09d8cee2dc441013a78b05d5e7ea9189f2ba829a7771ec89e5a49dd07baea6"
 
 [task.depends_on]
 "ae_pipeline/data/2026-10-14-sack-01.tradb" = "225f6475d442e10e2f5b2c29d6b3a250ae8120e8f4c6317e0e62ee0a57a1c90a"
 "task_plot_label_waterfall[2026-10-14-sack-01/11:36 alu loch]::times" = "0"
 
 [task.produces]
-"ae_pipeline/plots/2026-10-14-sack-01/waterfall_11:36_alu_loch.png" = "f9d5d3cefd19abd5ae73c7b7c6ef13a121363f2a90b0b1ef317588aaf04d630d"
+"ae_pipeline/plots/2026-10-14-sack-01/waterfall_11:36_alu_loch.png" = "da2453ff20f9c5e0cc44775d4bf52e37fbe1ee61bf0cc0657cac76b2f6bbcf38"
 
 [[task]]
 id = "ae_pipeline/plots/task_plot_waterfall.py::task_plot_waterfall"
-state = "aadd0e8f46a59805507089b1c47dbdeac0a9d8ab9575cd5cdab37e121014fe1f"
+state = "9a7258c68a104ae9b16af1e7ae93fe7beb83bad74c9b504a67b118f2137f911b"
 
 [task.depends_on]
-"ae_pipeline/data/2026-10-14-sack-01.metadata.toml" = "0936786803ffbcacfab7d5a1ab49970dc6e701a035b444175ce4bb0784d3d7f1"
-"ae_pipeline/data/2026-10-14-sack-01.tradb" = "225f6475d442e10e2f5b2c29d6b3a250ae8120e8f4c6317e0e62ee0a57a1c90a"
-
-[task.produces]
-"ae_pipeline/plots/2026-10-14-sack-01/waterfall.png" = "331e50ee08d149c7088b75ce6df3ae5a8d09b471b55a069e6309a19af0a05671"
-
-[[task]]
-id = "ae_pipeline/plots/task_plot_waterfall.py::task_plot_waterfall[2026-10-14-sack-01]"
-state = "31dd8105229226d4764dd2569bb0c5043e34d96d1233c03414be895181a3d651"
-
-[task.depends_on]
-"ae_pipeline/data/2026-10-14-sack-01.metadata.toml" = "69e28822080d6d2993b6c9a663efce85259320febb57e3d6e01e5ec0d17233a6"
-"ae_pipeline/data/2026-10-14-sack-01.tradb" = "225f6475d442e10e2f5b2c29d6b3a250ae8120e8f4c6317e0e62ee0a57a1c90a"
-
-[task.produces]
-"ae_pipeline/plots/2026-10-14-sack-01/waterfall.png" = "8897b331ebd7ad905de3590ad557dc3511330d8392f9febd33c5d426dd897d2e"
-
-[[task]]
-id = "ae_pipeline/plots/task_plot_waterfall.py::task_plot_waterfall[2026-10-16-test-coherence]"
-state = "31dd8105229226d4764dd2569bb0c5043e34d96d1233c03414be895181a3d651"
-
-[task.depends_on]
-"ae_pipeline/data/2026-10-16-test-coherence.metadata.toml" = "83cd950ebfbcccd3ec1d581ffc7a602a001cd7a31445e3ff30e713e5244e50f0"
+"ae_pipeline/data/2026-10-16-test-coherence.metadata.toml" = "2ee2c5cab618a391e1e8421cc9835f2387b8b64ecfa4af2d5046e6a16a3efe93"
 "ae_pipeline/data/2026-10-16-test-coherence.tradb" = "15a06e9126a45f8b1edae51f09612ce36f59229262cf6bf7e56b5f4fff7f5a5a"
 
 [task.produces]
-"ae_pipeline/plots/2026-10-16-test-coherence/waterfall.png" = "5e554aa86fff0890e3e36e19262cbef0fcce9d2fc458be0944d7dcdc4292d4b1"
+"ae_pipeline/plots/2026-10-16-test-coherence/waterfall.png" = "75317c89ba8d6ad46dd2c44ff187f9d3a0cc5a788f1d8b19ad9b1d951812f6cf"
+
+[[task]]
+id = "ae_pipeline/plots/task_plot_waterfall.py::task_plot_waterfall[2026-10-14-sack-01]"
+state = "cb09d8cee2dc441013a78b05d5e7ea9189f2ba829a7771ec89e5a49dd07baea6"
+
+[task.depends_on]
+"ae_pipeline/data/2026-10-14-sack-01.metadata.toml" = "5c36fe4554a9b064d1c75569d1767cc66cc67b3485f6d9fc5481c5ed18fe86ba"
+"ae_pipeline/data/2026-10-14-sack-01.tradb" = "225f6475d442e10e2f5b2c29d6b3a250ae8120e8f4c6317e0e62ee0a57a1c90a"
+
+[task.produces]
+"ae_pipeline/plots/2026-10-14-sack-01/waterfall.png" = "e964572d9ba508561c56379c9b7d716e5b988c1d94d9e6fc81a123173c81408c"
+
+[[task]]
+id = "ae_pipeline/plots/task_plot_waterfall.py::task_plot_waterfall[2026-10-16-test-coherence]"
+state = "cb09d8cee2dc441013a78b05d5e7ea9189f2ba829a7771ec89e5a49dd07baea6"
+
+[task.depends_on]
+"ae_pipeline/data/2026-10-16-test-coherence.metadata.toml" = "2ee2c5cab618a391e1e8421cc9835f2387b8b64ecfa4af2d5046e6a16a3efe93"
+"ae_pipeline/data/2026-10-16-test-coherence.tradb" = "15a06e9126a45f8b1edae51f09612ce36f59229262cf6bf7e56b5f4fff7f5a5a"
+
+[task.produces]
+"ae_pipeline/plots/2026-10-16-test-coherence/waterfall.png" = "905d339772983a47820a78241f9865da29e1aaa566316a5e784cf3c3724a3026"
 
 [[task]]
 id = "ae_pipeline/plots/task_plot_waterfall.py::task_plot_waterfall[test_conti_2]"

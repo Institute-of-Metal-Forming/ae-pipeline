@@ -112,7 +112,7 @@ def _plot_waterfall(transient_file: Path, start: float | None, end: float | None
         axs[-1].set_xlabel("Time t in s")
 
         norm = mcolors.Normalize(vmin=-100.0, vmax=100.0)
-        colorizer = mcolorizer.Colorizer(cmap="viridis", norm=norm)
+        colorizer = mcolorizer.Colorizer(cmap=plt.get_cmap("inferno").reversed(), norm=norm)
 
         for i, channel in enumerate(channels):
             axs[i].annotate(
