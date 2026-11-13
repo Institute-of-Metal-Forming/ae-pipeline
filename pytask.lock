@@ -53,6 +53,18 @@ state = "b5c6d73de19cea72e7a2ef99cb64540b3bf0d27bd34b47ebc5c00f7908f6f835"
 "ae_pipeline/aa_data/test_conti_2_metadata.toml" = "bcb6fc05ac28b5b5fa4521713b4ba0fc86e0f4a788e4fec3f67579ebcf240354"
 
 [[task]]
+id = "ae_pipeline/data/task_characterize_hits.py::task_characterize_hits"
+state = "122f431a72a4ab07ed0e7dffdd7f9f07542c06ca79a5f10a4cc128d5565b2155"
+
+[task.depends_on]
+"ae_pipeline/data/2026-10-16-test-coherence.pridb" = "1689a4f4c5d4d976203cec2b310914b31289db112cf66bda1949da0cdb844f41"
+"ae_pipeline/data/2026-10-16-test-coherence.tradb" = "15a06e9126a45f8b1edae51f09612ce36f59229262cf6bf7e56b5f4fff7f5a5a"
+"ae_pipeline/data/task_characterize_hits.py::task_characterize_hits::ds" = "0"
+
+[task.produces]
+"ae_pipeline/data/2026-10-16-test-coherence.hits.parquet" = "fd7b5bdb59c6af8dafc1e3539c1969510c0a4f40fe5bc08c20d8add72bc4008e"
+
+[[task]]
 id = "ae_pipeline/data/task_extract_metadata.py::task_plot_extract_metadata"
 state = "7a5661de7a33706c8d0cd23875b6f8d6f7d8c020ec3c2a36c4f923a5c22e1d48"
 
@@ -98738,6 +98750,28 @@ state = "6531d80f7e23aa867c2ee170ed230803c5fdf705d3ac0655a68513d1fe68500b"
 "ae_pipeline/plots/2026-10-16-test-coherence/hits/hit_105.png" = "b6c691421e740a2f750bdee92d9d5d216f31ea2c698d07b83eeeaa5f8612b67e"
 
 [[task]]
+id = "ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/113]"
+state = "41cf779a81d9e82414176dd60b987dd9035543c7ade985d67801b5a22b2ed559"
+
+[task.depends_on]
+"ae_pipeline/data/2026-10-16-test-coherence.tradb" = "15a06e9126a45f8b1edae51f09612ce36f59229262cf6bf7e56b5f4fff7f5a5a"
+"ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/113]::trai" = "0"
+
+[task.produces]
+"ae_pipeline/plots/2026-10-16-test-coherence/hits/hit_113.png" = "d80487cdc63a89f1cf824f53e23b1cc5b3d922e2e6ad4a708ab9bd356bcf864c"
+
+[[task]]
+id = "ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/119]"
+state = "73ac6200eee3fe90bef67fa231ed79961b0fb62546d677c20f94909c14c13dd1"
+
+[task.depends_on]
+"ae_pipeline/data/2026-10-16-test-coherence.tradb" = "15a06e9126a45f8b1edae51f09612ce36f59229262cf6bf7e56b5f4fff7f5a5a"
+"ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/119]::trai" = "0"
+
+[task.produces]
+"ae_pipeline/plots/2026-10-16-test-coherence/hits/hit_119.png" = "01f4e1961250116f6e2df7ac658837880a7bfa8bd9219a05217961c1d99fda49"
+
+[[task]]
 id = "ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/120]"
 state = "93a749dc9e9846f7bf81c99d20144620ca61eb56c5b238cfe8c373285eb54165"
 
@@ -98771,6 +98805,28 @@ state = "c8a41460c215278a7da6e4da40345dc0527593a37382191fefc66b96330744b8"
 "ae_pipeline/plots/2026-10-16-test-coherence/hits/hit_125.png" = "c433a522a7e0ba6a73fdde8dd33c71d04704f5230797f297632cffe3cebf70b8"
 
 [[task]]
+id = "ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/134]"
+state = "41cf779a81d9e82414176dd60b987dd9035543c7ade985d67801b5a22b2ed559"
+
+[task.depends_on]
+"ae_pipeline/data/2026-10-16-test-coherence.tradb" = "15a06e9126a45f8b1edae51f09612ce36f59229262cf6bf7e56b5f4fff7f5a5a"
+"ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/134]::trai" = "0"
+
+[task.produces]
+"ae_pipeline/plots/2026-10-16-test-coherence/hits/hit_134.png" = "7ce0ef1adb58bb95fe065dfdcf26eccb519e31a15c7a3b432b8ab218121220d5"
+
+[[task]]
+id = "ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/143]"
+state = "41cf779a81d9e82414176dd60b987dd9035543c7ade985d67801b5a22b2ed559"
+
+[task.depends_on]
+"ae_pipeline/data/2026-10-16-test-coherence.tradb" = "15a06e9126a45f8b1edae51f09612ce36f59229262cf6bf7e56b5f4fff7f5a5a"
+"ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/143]::trai" = "0"
+
+[task.produces]
+"ae_pipeline/plots/2026-10-16-test-coherence/hits/hit_143.png" = "6b16afe087665bd6c88700f8644224f576eaddfcf71fe5c17a8c1c6542c5a333"
+
+[[task]]
 id = "ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/144]"
 state = "201852fe9e7e21def35d712f55b46ebe96926a47076305104e5130eca4b57e24"
 
@@ -98794,14 +98850,25 @@ state = "67c90d89b6ad0195438ff92d128ad3c7b79552107786e5eeef835acb6683ca05"
 
 [[task]]
 id = "ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/14]"
-state = "e5531a6f4bfc05d0c1963be201a164208631d5430f03f7dbd01bfcc57a640184"
+state = "73ac6200eee3fe90bef67fa231ed79961b0fb62546d677c20f94909c14c13dd1"
 
 [task.depends_on]
 "ae_pipeline/data/2026-10-16-test-coherence.tradb" = "15a06e9126a45f8b1edae51f09612ce36f59229262cf6bf7e56b5f4fff7f5a5a"
 "ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/14]::trai" = "0"
 
 [task.produces]
-"ae_pipeline/plots/2026-10-16-test-coherence/hits/hit_14.png" = "04d909c70eae702ab69326f98c768cb16848326c64be28f1493d5fd54ebd19d3"
+"ae_pipeline/plots/2026-10-16-test-coherence/hits/hit_14.png" = "17b9cb151cd4f25a8c462d0996a3c37b8af292e14db1cce33697b7c960ec5a6c"
+
+[[task]]
+id = "ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/151]"
+state = "41cf779a81d9e82414176dd60b987dd9035543c7ade985d67801b5a22b2ed559"
+
+[task.depends_on]
+"ae_pipeline/data/2026-10-16-test-coherence.tradb" = "15a06e9126a45f8b1edae51f09612ce36f59229262cf6bf7e56b5f4fff7f5a5a"
+"ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/151]::trai" = "0"
+
+[task.produces]
+"ae_pipeline/plots/2026-10-16-test-coherence/hits/hit_151.png" = "efb30c118bf32bdb023ff66ecbfb994d26ecc01628bfee3901df8910c5d7ec80"
 
 [[task]]
 id = "ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/154]"
@@ -98827,14 +98894,25 @@ state = "c8f050d32113946c5d5255f733e1ae69c2eb7d9f55a68e172d17748fb1ea537e"
 
 [[task]]
 id = "ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/169]"
-state = "ca58a8e5e47c0971e2d7e08e4a027c30e97ce6bcc6d86eb216b19754ca257bb0"
+state = "41cf779a81d9e82414176dd60b987dd9035543c7ade985d67801b5a22b2ed559"
 
 [task.depends_on]
 "ae_pipeline/data/2026-10-16-test-coherence.tradb" = "15a06e9126a45f8b1edae51f09612ce36f59229262cf6bf7e56b5f4fff7f5a5a"
 "ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/169]::trai" = "0"
 
 [task.produces]
-"ae_pipeline/plots/2026-10-16-test-coherence/hits/hit_169.png" = "423e4c3f1c6e22cc7e104f96425f606497a04f3244e2457dc6b02a72cfe8aa4b"
+"ae_pipeline/plots/2026-10-16-test-coherence/hits/hit_169.png" = "c0c317c1e874ef13edcf20ee63a98ebb4ee9f5c7e678b8f90c35a41cbebed294"
+
+[[task]]
+id = "ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/16]"
+state = "73ac6200eee3fe90bef67fa231ed79961b0fb62546d677c20f94909c14c13dd1"
+
+[task.depends_on]
+"ae_pipeline/data/2026-10-16-test-coherence.tradb" = "15a06e9126a45f8b1edae51f09612ce36f59229262cf6bf7e56b5f4fff7f5a5a"
+"ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/16]::trai" = "0"
+
+[task.produces]
+"ae_pipeline/plots/2026-10-16-test-coherence/hits/hit_16.png" = "b667452b213423a4e90e8f4c162611cef7d0bca39ec79fd824aeb8e3753d0b88"
 
 [[task]]
 id = "ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/171]"
@@ -98846,6 +98924,28 @@ state = "0acc23bdfac36de21642e69db60212f4d3a3be4d69db212505646ba4e0f3cc29"
 
 [task.produces]
 "ae_pipeline/plots/2026-10-16-test-coherence/hits/hit_171.png" = "e29f216948f43f621c3fc256c72de4af0e271bf3001e815a30d3f939af755c34"
+
+[[task]]
+id = "ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/174]"
+state = "41cf779a81d9e82414176dd60b987dd9035543c7ade985d67801b5a22b2ed559"
+
+[task.depends_on]
+"ae_pipeline/data/2026-10-16-test-coherence.tradb" = "15a06e9126a45f8b1edae51f09612ce36f59229262cf6bf7e56b5f4fff7f5a5a"
+"ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/174]::trai" = "0"
+
+[task.produces]
+"ae_pipeline/plots/2026-10-16-test-coherence/hits/hit_174.png" = "c9c08a60e045883a2575d0a6afdf573bb7f7903556dd39531c2f7ac31dd3ef73"
+
+[[task]]
+id = "ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/175]"
+state = "41cf779a81d9e82414176dd60b987dd9035543c7ade985d67801b5a22b2ed559"
+
+[task.depends_on]
+"ae_pipeline/data/2026-10-16-test-coherence.tradb" = "15a06e9126a45f8b1edae51f09612ce36f59229262cf6bf7e56b5f4fff7f5a5a"
+"ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/175]::trai" = "0"
+
+[task.produces]
+"ae_pipeline/plots/2026-10-16-test-coherence/hits/hit_175.png" = "8ca82816350452bf250ab7bfb7579e2b18343041c927aaa10583a99974012347"
 
 [[task]]
 id = "ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/176]"
@@ -98868,6 +98968,17 @@ state = "6531d80f7e23aa867c2ee170ed230803c5fdf705d3ac0655a68513d1fe68500b"
 
 [task.produces]
 "ae_pipeline/plots/2026-10-16-test-coherence/hits/hit_180.png" = "9b36652b204e73e26316d0f5312c516c3aac96dff272d3500375429aa108a473"
+
+[[task]]
+id = "ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/181]"
+state = "73ac6200eee3fe90bef67fa231ed79961b0fb62546d677c20f94909c14c13dd1"
+
+[task.depends_on]
+"ae_pipeline/data/2026-10-16-test-coherence.tradb" = "15a06e9126a45f8b1edae51f09612ce36f59229262cf6bf7e56b5f4fff7f5a5a"
+"ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/181]::trai" = "0"
+
+[task.produces]
+"ae_pipeline/plots/2026-10-16-test-coherence/hits/hit_181.png" = "47fa5b7ccac5ae3441014e6d6351b9ccf1d16133640f5a0646bad91fa901f9e1"
 
 [[task]]
 id = "ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/186]"
@@ -98925,6 +99036,50 @@ state = "2df512b9edc35132bc9f824c1fcb077a4d6f27d8393136b30ff132555f654429"
 "ae_pipeline/plots/2026-10-16-test-coherence/hits/hit_200.png" = "9c61a9917dc462f9959877157ba1997bd162b4a2de59169a674efb5af3308017"
 
 [[task]]
+id = "ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/20]"
+state = "73ac6200eee3fe90bef67fa231ed79961b0fb62546d677c20f94909c14c13dd1"
+
+[task.depends_on]
+"ae_pipeline/data/2026-10-16-test-coherence.tradb" = "15a06e9126a45f8b1edae51f09612ce36f59229262cf6bf7e56b5f4fff7f5a5a"
+"ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/20]::trai" = "0"
+
+[task.produces]
+"ae_pipeline/plots/2026-10-16-test-coherence/hits/hit_20.png" = "21bca9b9a61ad0cb9bfddde4273294152f36d2bee406e59b58cc64f69220ca74"
+
+[[task]]
+id = "ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/210]"
+state = "41cf779a81d9e82414176dd60b987dd9035543c7ade985d67801b5a22b2ed559"
+
+[task.depends_on]
+"ae_pipeline/data/2026-10-16-test-coherence.tradb" = "15a06e9126a45f8b1edae51f09612ce36f59229262cf6bf7e56b5f4fff7f5a5a"
+"ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/210]::trai" = "0"
+
+[task.produces]
+"ae_pipeline/plots/2026-10-16-test-coherence/hits/hit_210.png" = "d38dc477b267d8db5854bc3a3e1cbb096073bde22f0ba152b4d8497bdb6f7bd8"
+
+[[task]]
+id = "ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/211]"
+state = "73ac6200eee3fe90bef67fa231ed79961b0fb62546d677c20f94909c14c13dd1"
+
+[task.depends_on]
+"ae_pipeline/data/2026-10-16-test-coherence.tradb" = "15a06e9126a45f8b1edae51f09612ce36f59229262cf6bf7e56b5f4fff7f5a5a"
+"ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/211]::trai" = "0"
+
+[task.produces]
+"ae_pipeline/plots/2026-10-16-test-coherence/hits/hit_211.png" = "27fb7fd793292383afc83f181641ce2848136e20e26d4aeeadf252417dc3e05e"
+
+[[task]]
+id = "ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/212]"
+state = "41cf779a81d9e82414176dd60b987dd9035543c7ade985d67801b5a22b2ed559"
+
+[task.depends_on]
+"ae_pipeline/data/2026-10-16-test-coherence.tradb" = "15a06e9126a45f8b1edae51f09612ce36f59229262cf6bf7e56b5f4fff7f5a5a"
+"ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/212]::trai" = "0"
+
+[task.produces]
+"ae_pipeline/plots/2026-10-16-test-coherence/hits/hit_212.png" = "1ba8f1c079edf4949c173947dfce0902ed18bff29a23584b3019cc548c4af714"
+
+[[task]]
 id = "ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/214]"
 state = "ab5d5da411a7d8f18136baf25238a42f9cbcb340e0cc86a25a6758982071a2e7"
 
@@ -98945,6 +99100,28 @@ state = "93a749dc9e9846f7bf81c99d20144620ca61eb56c5b238cfe8c373285eb54165"
 
 [task.produces]
 "ae_pipeline/plots/2026-10-16-test-coherence/hits/hit_215.png" = "3134d3817069a5be4aaad3a59ee3452432a14d96e375234d76c37106feaaeb79"
+
+[[task]]
+id = "ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/220]"
+state = "41cf779a81d9e82414176dd60b987dd9035543c7ade985d67801b5a22b2ed559"
+
+[task.depends_on]
+"ae_pipeline/data/2026-10-16-test-coherence.tradb" = "15a06e9126a45f8b1edae51f09612ce36f59229262cf6bf7e56b5f4fff7f5a5a"
+"ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/220]::trai" = "0"
+
+[task.produces]
+"ae_pipeline/plots/2026-10-16-test-coherence/hits/hit_220.png" = "31444ad0da803cf8384abd0b3d9314c36dfe09d9593c140a9e5aa4313dd5cff8"
+
+[[task]]
+id = "ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/221]"
+state = "41cf779a81d9e82414176dd60b987dd9035543c7ade985d67801b5a22b2ed559"
+
+[task.depends_on]
+"ae_pipeline/data/2026-10-16-test-coherence.tradb" = "15a06e9126a45f8b1edae51f09612ce36f59229262cf6bf7e56b5f4fff7f5a5a"
+"ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/221]::trai" = "0"
+
+[task.produces]
+"ae_pipeline/plots/2026-10-16-test-coherence/hits/hit_221.png" = "4c5fc6ff09d2c6a90e669d2eb75c1407b37c947a9079555c5210bf120ee4ada7"
 
 [[task]]
 id = "ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/222]"
@@ -99013,15 +99190,37 @@ state = "a48105565f32b0fe058493415aa19be80cd69eb66a71918c9651051415a163b0"
 "ae_pipeline/plots/2026-10-16-test-coherence/hits/hit_243.png" = "0fe6aba3f3a52be733452bb1cc56784d2d0e262bce711be22587aeb037ab8589"
 
 [[task]]
+id = "ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/24]"
+state = "41cf779a81d9e82414176dd60b987dd9035543c7ade985d67801b5a22b2ed559"
+
+[task.depends_on]
+"ae_pipeline/data/2026-10-16-test-coherence.tradb" = "15a06e9126a45f8b1edae51f09612ce36f59229262cf6bf7e56b5f4fff7f5a5a"
+"ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/24]::trai" = "0"
+
+[task.produces]
+"ae_pipeline/plots/2026-10-16-test-coherence/hits/hit_24.png" = "7414d790e8d3b0f1a088700b109f12aa73fe381e4b5b3d2bfe22a7f9bb11d8b6"
+
+[[task]]
+id = "ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/250]"
+state = "41cf779a81d9e82414176dd60b987dd9035543c7ade985d67801b5a22b2ed559"
+
+[task.depends_on]
+"ae_pipeline/data/2026-10-16-test-coherence.tradb" = "15a06e9126a45f8b1edae51f09612ce36f59229262cf6bf7e56b5f4fff7f5a5a"
+"ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/250]::trai" = "0"
+
+[task.produces]
+"ae_pipeline/plots/2026-10-16-test-coherence/hits/hit_250.png" = "a849c96107a303114c9b3cce564dce70c8e1c5c72bb0dc64c58e91825f94ce94"
+
+[[task]]
 id = "ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/255]"
-state = "67c90d89b6ad0195438ff92d128ad3c7b79552107786e5eeef835acb6683ca05"
+state = "73ac6200eee3fe90bef67fa231ed79961b0fb62546d677c20f94909c14c13dd1"
 
 [task.depends_on]
 "ae_pipeline/data/2026-10-16-test-coherence.tradb" = "15a06e9126a45f8b1edae51f09612ce36f59229262cf6bf7e56b5f4fff7f5a5a"
 "ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/255]::trai" = "0"
 
 [task.produces]
-"ae_pipeline/plots/2026-10-16-test-coherence/hits/hit_255.png" = "e7aff670f3b812a8b8be7801896908e4716f28d0621105456b58408ee0d56777"
+"ae_pipeline/plots/2026-10-16-test-coherence/hits/hit_255.png" = "b9527a524fa275d53dfab685cc0fa18d550c998fa1ba3bb6472b2bcbf7778eb2"
 
 [[task]]
 id = "ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/25]"
@@ -99057,6 +99256,17 @@ state = "efdc1d5596f2bbc46e683f8011e4f24f12360f6ea313d19a343ae9915d490097"
 "ae_pipeline/plots/2026-10-16-test-coherence/hits/hit_272.png" = "791ddfef65947d744bc8b93cb32a08ee8c9828135499b2c7c3742bbf091d8850"
 
 [[task]]
+id = "ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/274]"
+state = "41cf779a81d9e82414176dd60b987dd9035543c7ade985d67801b5a22b2ed559"
+
+[task.depends_on]
+"ae_pipeline/data/2026-10-16-test-coherence.tradb" = "15a06e9126a45f8b1edae51f09612ce36f59229262cf6bf7e56b5f4fff7f5a5a"
+"ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/274]::trai" = "0"
+
+[task.produces]
+"ae_pipeline/plots/2026-10-16-test-coherence/hits/hit_274.png" = "8ee4b58a6d6db30c6193785063693238cc67ec5938f1518e4b197f7b14ab6d10"
+
+[[task]]
 id = "ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/283]"
 state = "2a1e58d5448c59cfd722df3020155afb1e86e47bb7f3d510613405537771551f"
 
@@ -99066,6 +99276,17 @@ state = "2a1e58d5448c59cfd722df3020155afb1e86e47bb7f3d510613405537771551f"
 
 [task.produces]
 "ae_pipeline/plots/2026-10-16-test-coherence/hits/hit_283.png" = "888ca762e81c397cd9ada0e45dc39dff32e8fb1a61774cd985589ffabcddfa16"
+
+[[task]]
+id = "ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/288]"
+state = "41cf779a81d9e82414176dd60b987dd9035543c7ade985d67801b5a22b2ed559"
+
+[task.depends_on]
+"ae_pipeline/data/2026-10-16-test-coherence.tradb" = "15a06e9126a45f8b1edae51f09612ce36f59229262cf6bf7e56b5f4fff7f5a5a"
+"ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/288]::trai" = "0"
+
+[task.produces]
+"ae_pipeline/plots/2026-10-16-test-coherence/hits/hit_288.png" = "43b0662f1b84b8428abb2128c8ff1cfd7f4e61fd99f9a7d66291fde7a9c1f6d6"
 
 [[task]]
 id = "ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/294]"
@@ -99079,6 +99300,28 @@ state = "6fb25ee94ef74c16f0666c115f07b3bfd84008760a8d02a387580c550e228091"
 "ae_pipeline/plots/2026-10-16-test-coherence/hits/hit_294.png" = "fe227fdbbbebfee2d49993060c11f8cb5ac7dd9ad4337760ceff4a1b0ab2c77b"
 
 [[task]]
+id = "ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/304]"
+state = "485f6c7186883f172da43bc8ca3b280a7874dcd77f23e3e692c593bb83e1cb89"
+
+[task.depends_on]
+"ae_pipeline/data/2026-10-16-test-coherence.tradb" = "15a06e9126a45f8b1edae51f09612ce36f59229262cf6bf7e56b5f4fff7f5a5a"
+"ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/304]::trai" = "0"
+
+[task.produces]
+"ae_pipeline/plots/2026-10-16-test-coherence/hits/hit_304.png" = "a687be22b28c0eb47b3acd31f6a7276d2c75a194c977a0aecb224e347148cf9d"
+
+[[task]]
+id = "ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/30]"
+state = "73ac6200eee3fe90bef67fa231ed79961b0fb62546d677c20f94909c14c13dd1"
+
+[task.depends_on]
+"ae_pipeline/data/2026-10-16-test-coherence.tradb" = "15a06e9126a45f8b1edae51f09612ce36f59229262cf6bf7e56b5f4fff7f5a5a"
+"ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/30]::trai" = "0"
+
+[task.produces]
+"ae_pipeline/plots/2026-10-16-test-coherence/hits/hit_30.png" = "e22286dbb41268e2c3b0f4388a53c67acfca932cec022f8f42b0bdcedaf41b77"
+
+[[task]]
 id = "ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/31]"
 state = "a677a16f1be29bfc4652381704a899d9c5ee80f6abe3f6d7f03c01160dc2d80b"
 
@@ -99088,6 +99331,50 @@ state = "a677a16f1be29bfc4652381704a899d9c5ee80f6abe3f6d7f03c01160dc2d80b"
 
 [task.produces]
 "ae_pipeline/plots/2026-10-16-test-coherence/hits/hit_31.png" = "9e5824c25f434bfd3242207e86bc7f525c055ee4c98f4a86f5c23cc7f3df9ea1"
+
+[[task]]
+id = "ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/46]"
+state = "41cf779a81d9e82414176dd60b987dd9035543c7ade985d67801b5a22b2ed559"
+
+[task.depends_on]
+"ae_pipeline/data/2026-10-16-test-coherence.tradb" = "15a06e9126a45f8b1edae51f09612ce36f59229262cf6bf7e56b5f4fff7f5a5a"
+"ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/46]::trai" = "0"
+
+[task.produces]
+"ae_pipeline/plots/2026-10-16-test-coherence/hits/hit_46.png" = "309aaf0964e13bd4fc574fa89d2d0219821716445aea94b19e9a96c353702a50"
+
+[[task]]
+id = "ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/52]"
+state = "73ac6200eee3fe90bef67fa231ed79961b0fb62546d677c20f94909c14c13dd1"
+
+[task.depends_on]
+"ae_pipeline/data/2026-10-16-test-coherence.tradb" = "15a06e9126a45f8b1edae51f09612ce36f59229262cf6bf7e56b5f4fff7f5a5a"
+"ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/52]::trai" = "0"
+
+[task.produces]
+"ae_pipeline/plots/2026-10-16-test-coherence/hits/hit_52.png" = "c500c8f5738a33b507083c3033054c6ff8c3de0f4cf4f41e833b24b6781b5a34"
+
+[[task]]
+id = "ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/54]"
+state = "c7189f494cd7e87c9fb7e9e1a9d21cb5dfcfb12e947cee7fdc56e9f07158c658"
+
+[task.depends_on]
+"ae_pipeline/data/2026-10-16-test-coherence.tradb" = "15a06e9126a45f8b1edae51f09612ce36f59229262cf6bf7e56b5f4fff7f5a5a"
+"ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/54]::trai" = "0"
+
+[task.produces]
+"ae_pipeline/plots/2026-10-16-test-coherence/hits/hit_54.png" = "60b78f274cc98650c99c402797d06024f545b77a59e29d29e9287cf54886ccab"
+
+[[task]]
+id = "ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/55]"
+state = "41cf779a81d9e82414176dd60b987dd9035543c7ade985d67801b5a22b2ed559"
+
+[task.depends_on]
+"ae_pipeline/data/2026-10-16-test-coherence.tradb" = "15a06e9126a45f8b1edae51f09612ce36f59229262cf6bf7e56b5f4fff7f5a5a"
+"ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/55]::trai" = "0"
+
+[task.produces]
+"ae_pipeline/plots/2026-10-16-test-coherence/hits/hit_55.png" = "4b25d9cb9988d9f7632bc2d703e41bc2c2065b2584543c9f4f84ac378eb01c9b"
 
 [[task]]
 id = "ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/57]"
@@ -99134,6 +99421,17 @@ state = "0acc23bdfac36de21642e69db60212f4d3a3be4d69db212505646ba4e0f3cc29"
 "ae_pipeline/plots/2026-10-16-test-coherence/hits/hit_6.png" = "da3753863663d5ad2207560dbd7bbd062ac96b70c5c7b9d8ff37c1c59d5c376f"
 
 [[task]]
+id = "ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/76]"
+state = "73ac6200eee3fe90bef67fa231ed79961b0fb62546d677c20f94909c14c13dd1"
+
+[task.depends_on]
+"ae_pipeline/data/2026-10-16-test-coherence.tradb" = "15a06e9126a45f8b1edae51f09612ce36f59229262cf6bf7e56b5f4fff7f5a5a"
+"ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/76]::trai" = "0"
+
+[task.produces]
+"ae_pipeline/plots/2026-10-16-test-coherence/hits/hit_76.png" = "692dfad5865c59e4aa5c8e65aec8b90f910b907cab7a616668412d6a7e11bbfb"
+
+[[task]]
 id = "ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/77]"
 state = "a48105565f32b0fe058493415aa19be80cd69eb66a71918c9651051415a163b0"
 
@@ -99146,14 +99444,25 @@ state = "a48105565f32b0fe058493415aa19be80cd69eb66a71918c9651051415a163b0"
 
 [[task]]
 id = "ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/78]"
-state = "a48105565f32b0fe058493415aa19be80cd69eb66a71918c9651051415a163b0"
+state = "73ac6200eee3fe90bef67fa231ed79961b0fb62546d677c20f94909c14c13dd1"
 
 [task.depends_on]
 "ae_pipeline/data/2026-10-16-test-coherence.tradb" = "15a06e9126a45f8b1edae51f09612ce36f59229262cf6bf7e56b5f4fff7f5a5a"
 "ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/78]::trai" = "0"
 
 [task.produces]
-"ae_pipeline/plots/2026-10-16-test-coherence/hits/hit_78.png" = "60331a64e1267da86f14acc2d20373f717ba48d23f22c0102c028cc669308923"
+"ae_pipeline/plots/2026-10-16-test-coherence/hits/hit_78.png" = "f7b2498d63f08acf2f108703c43bbd2981b20c4541f9a9c082fb6d50848c95f7"
+
+[[task]]
+id = "ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/7]"
+state = "41cf779a81d9e82414176dd60b987dd9035543c7ade985d67801b5a22b2ed559"
+
+[task.depends_on]
+"ae_pipeline/data/2026-10-16-test-coherence.tradb" = "15a06e9126a45f8b1edae51f09612ce36f59229262cf6bf7e56b5f4fff7f5a5a"
+"ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/7]::trai" = "0"
+
+[task.produces]
+"ae_pipeline/plots/2026-10-16-test-coherence/hits/hit_7.png" = "bcedb752a776d0455f074eea5d4b305abf092ef2ce41868515beededf0fcb0d2"
 
 [[task]]
 id = "ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/81]"
@@ -99167,6 +99476,17 @@ state = "47cc61680fee602a711237f984bee367680e7f856b5bf3bac63a4cc909ee3dab"
 "ae_pipeline/plots/2026-10-16-test-coherence/hits/hit_81.png" = "81d5b3e8432fff95b25aef9f9ee742ef4c96088174ecafed8ee41d6f7e6961a8"
 
 [[task]]
+id = "ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/84]"
+state = "41cf779a81d9e82414176dd60b987dd9035543c7ade985d67801b5a22b2ed559"
+
+[task.depends_on]
+"ae_pipeline/data/2026-10-16-test-coherence.tradb" = "15a06e9126a45f8b1edae51f09612ce36f59229262cf6bf7e56b5f4fff7f5a5a"
+"ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/84]::trai" = "0"
+
+[task.produces]
+"ae_pipeline/plots/2026-10-16-test-coherence/hits/hit_84.png" = "2667fe208d74d346e3c81040ce7e1415246bf7aecda9f2f267fe78d432f55950"
+
+[[task]]
 id = "ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/94]"
 state = "eeb3eaa11a655f61733f6e1a24b015dd67282205bd8f37b35142e2b84718e24c"
 
@@ -99176,6 +99496,17 @@ state = "eeb3eaa11a655f61733f6e1a24b015dd67282205bd8f37b35142e2b84718e24c"
 
 [task.produces]
 "ae_pipeline/plots/2026-10-16-test-coherence/hits/hit_94.png" = "7feafa597aeffc7c31095546d3a9d92b0eeef6a01c51b75a276550f927c0afd3"
+
+[[task]]
+id = "ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/95]"
+state = "41cf779a81d9e82414176dd60b987dd9035543c7ade985d67801b5a22b2ed559"
+
+[task.depends_on]
+"ae_pipeline/data/2026-10-16-test-coherence.tradb" = "15a06e9126a45f8b1edae51f09612ce36f59229262cf6bf7e56b5f4fff7f5a5a"
+"ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/95]::trai" = "0"
+
+[task.produces]
+"ae_pipeline/plots/2026-10-16-test-coherence/hits/hit_95.png" = "c642c9527a6d752a33adf3c070db7765cff667e93b0e7022222016660d9fa3aa"
 
 [[task]]
 id = "ae_pipeline/plots/task_plot_hits.py::task_plot_hit[2026-10-16-test-coherence/98]"

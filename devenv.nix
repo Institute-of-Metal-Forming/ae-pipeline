@@ -13,6 +13,7 @@
     enable = true;
     version = "3.14";
     venv.enable = true;
+    lsp.package = pkgs.ty;
     uv = {
       enable = true;
       sync.enable = true;

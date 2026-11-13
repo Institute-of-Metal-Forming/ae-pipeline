@@ -4,29 +4,30 @@ authors = [{ name = "Max Weiner", email = "max.weiner@imf.tu-freiberg.de" }]
 version = "0.1"
 requires-python = ">=3.14"
 dependencies = [
-  "jupyter",
-  "jupytext~=1.19",
-  "jupyterlab_myst",
-  "pandas~=3.0",
-  "matplotlib~=3.11",
-  "soundfile~=0.14.0",
-  "numpy~=2.5",
-  "plotly~=7.0",
-  "pytask~=0.6.0",
-  "sqlalchemy~=2.0",
-  "pydantic~=2.13",
-  "scipy~=1.18",
-  "vallenae~=0.14.0",
-  "tomli-w~=1.2",
+    "jupyter",
+    "jupytext~=1.19",
+    "jupyterlab_myst",
+    "pandas~=3.0",
+    "matplotlib~=3.11",
+    "soundfile~=0.14.0",
+    "numpy~=2.5",
+    "plotly~=7.0",
+    "pytask~=0.6.0",
+    "sqlalchemy~=2.0",
+    "pydantic~=2.13",
+    "scipy~=1.18",
+    "vallenae~=0.14.0",
+    "tomli-w~=1.2",
+    "pyarrow~=26.0",
 ]
 license = "MIT"
 readme = "README.md"
 keywords = []
 classifiers = [
-  "Development Status :: 3 - Alpha",
-  "Programming Language :: Python :: 3.14",
-  "Programming Language :: Python :: Implementation :: CPython",
-  "Programming Language :: Python",
+    "Development Status :: 3 - Alpha",
+    "Programming Language :: Python :: 3.14",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python",
 ]
 
 [project.urls]
@@ -45,6 +46,9 @@ module-root = ""
 venvPath = ".devenv/state"
 venv = "venv"
 
+[tool.ty.environment]
+python = ".devenv/state/venv"
+
 [tool.ruff]
 
 line-length = 120
@@ -55,18 +59,18 @@ docstring-code-line-length = 120
 
 [tool.ruff.lint]
 select = [
-  "E",   # pycodestyle
-  "F",   # Pyflakes
-  "UP",  # pyupgrade
-  "B",   # flake8-bugbear
-  "SIM", # flake8-simplify
-  "I",   # isort
+    "E",   # pycodestyle
+    "F",   # Pyflakes
+    "UP",  # pyupgrade
+    "B",   # flake8-bugbear
+    "SIM", # flake8-simplify
+    "I",   # isort
 ]
 ignore = [
-  "B006", # mutable data structures in task arguments
-  "B008", # function calls in task arguments
-  "E501", # long lines (string literals)
-  "E741", # ambiguous variable names
+    "B006", # mutable data structures in task arguments
+    "B008", # function calls in task arguments
+    "E501", # long lines (string literals)
+    "E741", # ambiguous variable names
 ]
 
 

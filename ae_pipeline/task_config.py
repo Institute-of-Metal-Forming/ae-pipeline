@@ -29,6 +29,11 @@ class Dataset(BaseModel):
 
     @computed_field
     @cached_property
+    def hits_file(self) -> Path:
+        return self.primary_file.with_suffix(".hits.parquet")
+
+    @computed_field
+    @cached_property
     def metadata_file(self) -> Path:
         return self.primary_file.with_suffix(".metadata.toml")
 
