@@ -6,13 +6,14 @@ import numpy as np
 import pandas as pd
 import pytask
 
-from ae_pipeline.task_config import DATASETS, PLOTS_DIR
+from ae_pipeline.task_config import DATASETS, EACH_HIT, PLOTS_DIR
 
 THRESHOLD = 32
 
 for ds in DATASETS:
 
-    @pytask.task(id=ds.name, is_generator=True)
+    @pytask.task(id=ds.name)
+    @pytask.mark.skipif(not EACH_HIT, reason="Skipping because EACH_HIT==False")
     def task_plot_hits(
         produces: Annotated[
             Path,
@@ -36,10 +37,10 @@ for ds in DATASETS:
             axs[1].margins(x=0)
 
             sample_rate = df.sample_rate[trai]
-            signal = np.array(df.signal_dB[trai])
+            signal = np.array(df.signal_dB[trai]).reshape((1000, -1)).max(axis=-1)
             times = np.arange(len(signal), dtype="float64") / sample_rate
 
-            axs[0].stem(times, signal, markerfmt="", basefmt="")
+            axs[0].plot(times, signal)
             axs[0].set_ylim(0, 100)
             axs[0].axhline(THRESHOLD, color="r", linestyle="--", linewidth=1)
 

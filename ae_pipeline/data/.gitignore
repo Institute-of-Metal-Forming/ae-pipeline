@@ -1,3 +1,4 @@
 *.metadata.toml
+*.hits.parquet
 *.pridb
 *.tradb

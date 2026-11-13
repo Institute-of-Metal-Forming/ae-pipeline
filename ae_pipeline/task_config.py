@@ -12,6 +12,7 @@ DATA_DIR = ROOT_DIR / "data"
 PLOTS_DIR = ROOT_DIR / "plots"
 
 DEBUG = True
+EACH_HIT = False
 
 
 class Dataset(BaseModel):

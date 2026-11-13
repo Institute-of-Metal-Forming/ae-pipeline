@@ -1,12 +1,10 @@
-import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-import pyarrow as pa
 import pytask
+import scipy.signal as sig
 import vallenae
-from scipy.signal import find_peaks, welch
 
-from ae_pipeline.task_config import DATA_DIR, DATASETS, PLOTS_DIR
+from ae_pipeline.task_config import DATASETS
 
 THRESHOLD = 32
 NPERSEG = 2048
@@ -43,8 +41,8 @@ for ds in DATASETS:
                     signal_dB_series[trai] = signal_dB
                     result.at[trai, "sample_rate"] = sample_rate
 
-                    _, psd = welch(signal, sample_rate, nperseg=NPERSEG, noverlap=NPERSEG // 2)
-                    peaks, _ = find_peaks(psd / np.max(psd), prominence=0.2)
+                    _, psd = sig.welch(signal, sample_rate, nperseg=NPERSEG, noverlap=NPERSEG // 2)
+                    peaks, _ = sig.find_peaks(psd / np.max(psd), prominence=0.2)
                     result.at[trai, "nfft"] = NPERSEG
                     psd_series[trai] = psd
                     peaks_series[trai] = peaks.astype("uint16")

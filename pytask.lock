@@ -54,15 +54,15 @@ state = "b5c6d73de19cea72e7a2ef99cb64540b3bf0d27bd34b47ebc5c00f7908f6f835"
 
 [[task]]
 id = "ae_pipeline/data/task_characterize_hits.py::task_characterize_hits"
-state = "122f431a72a4ab07ed0e7dffdd7f9f07542c06ca79a5f10a4cc128d5565b2155"
+state = "eb939c6a3470603754c2f11ff7fa28912794ab105cace975dd3276294ce5e852"
 
 [task.depends_on]
-"ae_pipeline/data/2026-10-16-test-coherence.pridb" = "1689a4f4c5d4d976203cec2b310914b31289db112cf66bda1949da0cdb844f41"
-"ae_pipeline/data/2026-10-16-test-coherence.tradb" = "15a06e9126a45f8b1edae51f09612ce36f59229262cf6bf7e56b5f4fff7f5a5a"
+"ae_pipeline/data/2026-10-14-sack-01.pridb" = "5de0ca70bf8a36293c8b911c812b2af5009e73246b54d64d1a0d0b0a6a2ff19f"
+"ae_pipeline/data/2026-10-14-sack-01.tradb" = "225f6475d442e10e2f5b2c29d6b3a250ae8120e8f4c6317e0e62ee0a57a1c90a"
 "ae_pipeline/data/task_characterize_hits.py::task_characterize_hits::ds" = "0"
 
 [task.produces]
-"ae_pipeline/data/2026-10-16-test-coherence.hits.parquet" = "fd7b5bdb59c6af8dafc1e3539c1969510c0a4f40fe5bc08c20d8add72bc4008e"
+"ae_pipeline/data/2026-10-14-sack-01.hits.parquet" = "a845f2cf7c61dc5e85d123714cc9cc9f7f5c4fc1c2dbefe7e2f61ae5c864721a"
 
 [[task]]
 id = "ae_pipeline/data/task_extract_metadata.py::task_plot_extract_metadata"
