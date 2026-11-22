@@ -99654,7 +99654,7 @@ state = "cb09d8cee2dc441013a78b05d5e7ea9189f2ba829a7771ec89e5a49dd07baea6"
 
 [task.depends_on]
 "ae_pipeline/data/2026-10-14-sack-01.tradb" = "225f6475d442e10e2f5b2c29d6b3a250ae8120e8f4c6317e0e62ee0a57a1c90a"
-"task_plot_label_edge_filter[2026-10-14-sack-01/11:36 alu loch]::times" = "0"
+"task_plot_label_waterfall[2026-10-14-sack-01/11:36 alu loch]::times" = "0"
 
 [task.produces]
 "ae_pipeline/plots/2026-10-14-sack-01/waterfall_11:20_walze_dreht.png" = "45b3a455cfa560d220b56d343bf887df6f42c83db356663ec3b2fd7106a0e89c"
