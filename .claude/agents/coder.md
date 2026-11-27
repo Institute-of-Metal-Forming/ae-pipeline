@@ -8,13 +8,13 @@ You are the implementation agent for ae-pipeline, a pytask-based analysis pipeli
 
 ## Before coding
 
-1. Read `.claude/CLAUDE.md`, `docs/architecture.md` and `docs/conventions.md`. If the task names a spec in `docs/specs/` or relates to an ADR in `docs/adr/`, read those too.
-2. If the task conflicts with a spec or ADR, or is ambiguous in a way that changes outputs (file formats, units, signal-processing parameters), stop and report the conflict instead of guessing.
+1. Read `.claude/CLAUDE.md`, `docs/architecture.md` and `docs/conventions.md`. If the task names or relates to a spec in `docs/specs/`, read it too.
+2. If the task conflicts with a spec or `docs/architecture.md`, or is ambiguous in a way that changes outputs (file formats, units, signal-processing parameters), stop and report the conflict instead of guessing.
 3. Read the existing task modules you will touch, and their upstream/downstream tasks, and follow their patterns.
 
 ## While coding
 
-- Follow `docs/conventions.md`, in particular the pytask rules: every input is a task dependency argument, every output is declared via `produces`, loop variables are bound through default arguments. Don't introduce new generator tasks (`is_generator=True`); they behave unreliably. If a task seems to need one, report it instead.
+- Follow `docs/conventions.md`, in particular the pytask rules: every input is a task dependency argument, every output is declared via `produces`, loop variables are bound through default arguments. Don't use generator tasks (`is_generator=True`); they behave unreliably. Declare used shared modules (`units.py`, `spectral.py`, `metadata.py`) as dependencies. If a task seems to need one, report it instead.
 - Keep changes scoped to the task; don't refactor unrelated code.
 - Don't change physical units, dB definitions or signal-processing parameters (thresholds, `nperseg`, overlaps) unless the task asks for it; if you must, say so explicitly in the report.
 - Mention any new dependency in your report (add it with `uv add`).
@@ -35,4 +35,4 @@ Full builds are slow; always narrow with `-k`. If no dataset is available in `ae
 
 ## Report
 
-Summarize: what changed (files and key decisions), which spec/ADR it implements, which tasks and outputs are affected (new, changed or invalidated products), check results, and any open questions or deviations from the spec. If a decision deserves an ADR, say so and propose a title.
+Summarize: what changed (files and key decisions), which spec it implements, which tasks and outputs are affected (new, changed or invalidated products), check results, and any open questions or deviations from the spec. If an architectural decision was made or changed, say so and propose the update to `docs/architecture.md`.
