@@ -13,11 +13,65 @@ Group the hits of a dataset into clusters by their spectral content, using the B
 
 ## Outputs
 
-Not defined yet.
+- a pickle file storing the state of the trained clusterer for later prediction usage
+- several plots visualizing the clusters (see below)
+- a summary file describing the overall result:
+  - number of clusters
+  - rating of the quality of separation
 
-## Current state
+## Clustering procedure
 
-1. One task per dataset with id `<name>` reads the hits table and converts the `peaks` column to a NumPy array. Nothing is computed or written yet.
+- Use BIRCH clusterer of `scikit-learn` as it is scalable and provides a `predict` method to classify new hits depending on the already trained clusters.
+- Cluster per dataset.
+
+### Features
+
+- Do *not* use any absolute signal strength/energy related features as they are misleading due to unpredictable signal damping between the source and the senors.
+- Pre-cluster the present peaks over the whole dataset before defining the peak feature set to count peaks in several samples that are close as a single one.
+- Apply feature normalization.
+
+Integral/summary features:
+
+- Time of arrival
+- Duration
+- RiseT / Duration
+- Temporal centroid of signal strength / Duration
+
+Frequency features:
+
+- Peak frequencies
+- Relative height (normed on the max peak height)
+
+## Plots to generate
+
+### Cluster rate over time
+
+- plot with one line per cluster, distinguished by color
+- y axis shows rate of hits that belong to a cluster per time unit
+
+### Scatter plot
+
+- a plot matrix of scatters of pairwise features
+- cluster label distinguished by color
+
+### Violin plots
+
+- violin plot of cluster counts
+- one plot per feature
+- one violin per cluster
+
+### Histograms
+
+- histograms of cluster counts over the feature value
+- one plot per feature
+- bars are stacked
+
+## Background information
+
+- the data stems from acoustic measurements on rolling plants
+- some clusters are expected to contain hits of only a short period of time (e.g. because of positioning of the rolls), some more distributed (e.g. because of roll rotation or rolled samples)
+- The signal damping between the source and the sensor may be quite high due to bad coupling (e.g. in bearings) and also unreliable, so the information content in this is limited
+- multiple hits on different channels may stem from the same source event with some time offset, their connection is omitted for now but shall be regarded in a sperate clustering procedure
 
 ## Open questions
 
