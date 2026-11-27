@@ -142,7 +142,7 @@ def _plot_waterfall(transient_file: Path, start: float | None, end: float | None
             )
 
             spectro = stft.spectrogram(signal)
-            spectro_dB = 10 * np.log(spectro)
+            spectro_dB = 10 * np.log10(spectro)
             extent = list(stft.extent(len(signal), "tf", False))
             extent = (*extent[:3], extent[3] / 1e3)
 

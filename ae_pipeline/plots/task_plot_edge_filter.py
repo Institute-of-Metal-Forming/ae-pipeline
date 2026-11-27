@@ -145,7 +145,7 @@ def _plot_edge_filter(transient_file: Path, start: float | None, end: float | No
             )
 
             spectro = stft.spectrogram(signal)
-            spectro_dB = 10 * np.log(spectro)
+            spectro_dB = 10 * np.log10(spectro)
 
             diff_filtered = gaussian_filter1d(
                 spectro_dB,

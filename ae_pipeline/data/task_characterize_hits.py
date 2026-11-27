@@ -37,7 +37,7 @@ for ds in DATASETS:
                 for trai in result.index:
                     signal, sample_rate = tradb.read_wave(trai, time_axis=False)
                     signal *= 1e6
-                    signal_dB = 10 * np.log(np.abs(signal))
+                    signal_dB = 10 * np.log10(np.abs(signal))
                     signal_dB_series[trai] = signal_dB
                     result.at[trai, "sample_rate"] = sample_rate
 
