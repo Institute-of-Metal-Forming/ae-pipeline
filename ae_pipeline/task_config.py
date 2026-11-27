@@ -12,7 +12,7 @@ ROOT_DIR = Path(__file__).parent
 DATA_DIR = ROOT_DIR / "data"
 PLOTS_DIR = ROOT_DIR / "plots"
 
-EACH_HIT = True
+EACH_HIT = False
 
 PLOT_FORMATS: list[str] = ["png"]
 """File formats every figure is saved in (spec 0010 R1)."""

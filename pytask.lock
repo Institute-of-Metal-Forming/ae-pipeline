@@ -99788,11 +99788,6 @@ state = "c51bbd89923f61dbd310831037cb6f7c32bf40d9198be9cba250ca5c42a31b38"
 "ae_pipeline/units.py" = "e74028a3b81c3ac56a44a5c9737ab21a6a4e45cd94a0fae8bd854554e7bd32a1"
 
 [task.produces]
-"ae_pipeline/plots/2026-11-26-walzen1/waterfall/1338_Resume.png" = "f585278d5924fb7255fabdcd9b8b73dd9ad57ec307f933cf4359ac88effb7223"
-"ae_pipeline/plots/2026-11-26-walzen1/waterfall/1339_P2.png" = "008567accb6318fc73a887dba16fe9d2e8607cd6e908d08e5d2e06d44a4ff480"
-"ae_pipeline/plots/2026-11-26-walzen1/waterfall/1342_P3.png" = "ddb336810a2bdee1c3f25b398f8fd6022052c4c07572438b583003c87165d9dc"
-"ae_pipeline/plots/2026-11-26-walzen1/waterfall/1346_Ende.png" = "ec007e72c3fe4a312e68c9478301c390402f210adc946557b93f14e969669d40"
-"ae_pipeline/plots/2026-11-26-walzen1/waterfall/1346_P4.png" = "dfb0b433645d596be6cc07cfc929658a295589df973eba800621ffff4bc0ef23"
 
 [[task]]
 id = "ae_pipeline/task_import_aa_data.py::task_describe_dataset"
