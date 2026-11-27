@@ -28,7 +28,6 @@ Coding conventions for ae-pipeline. Rules enforced by tooling are configured in 
 
 - All stored data is linear: voltages (waveforms, amplitudes, thresholds) in µV, power quantities in µV² or µV²/Hz. Values read from the Vallen databases (in V) are converted to µV right after reading. Levels in dB(AE) are never stored; they are computed only where they are shown, e.g. in plots.
 
-- All unit conversions go through the central functions in `ae_pipeline/units.py` (spec 0008): `volts_to_microvolts`, `amplitude_to_dB`, `dB_to_amplitude`, `power_to_dB`. Do not write `1e6` factors or `log10` levels inline.
 - All unit conversions go through the central functions in `ae_pipeline/units.py` (spec 0008): `volts_to_microvolts`, `amplitude_to_dB`, `dB_to_amplitude`, `power_to_dB`, `hz_to_khz`. Do not write `1e6` or `1e3` factors or `log10` levels inline.
 
 - dB always means dB(AE), the AE domain standard: a level relative to 1 µV. Signals are in µV (see above), so the reference value is 1.
@@ -39,7 +38,7 @@ Coding conventions for ae-pipeline. Rules enforced by tooling are configured in 
 
 - Detection thresholds are per channel and come from the dataset (`channels.<n>.threshold` in the metadata, spec 0002 R6), in µV. Never hard-code a threshold; the only exception is the default of 32 dB(AE) for channels without hits, defined in the metadata extraction. The threshold only governs the detection of a hit and of its end; it is not a lower bound for values within a hit, so data is never clipped to it.
 
-- Frequencies are plotted in kHz and times in s.
+- Frequencies are plotted in kHz and times in s. The expected frequency range lies from 10 to 1000 kHz because of the used sensor characteristics.
 
 - Spectral settings (segment length, hop, window) come from `ae_pipeline/spectral.py` (spec 0009); no task defines its own.
 
