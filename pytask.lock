@@ -53,16 +53,41 @@ state = "b5c6d73de19cea72e7a2ef99cb64540b3bf0d27bd34b47ebc5c00f7908f6f835"
 "ae_pipeline/aa_data/test_conti_2_metadata.toml" = "bcb6fc05ac28b5b5fa4521713b4ba0fc86e0f4a788e4fec3f67579ebcf240354"
 
 [[task]]
-id = "ae_pipeline/data/task_characterize_hits.py::task_characterize_hits"
-state = "eb939c6a3470603754c2f11ff7fa28912794ab105cace975dd3276294ce5e852"
+id = "ae_pipeline/classify/task_birch_cluster.py::task_birch_cluster"
+state = "3c0b392849c37aeb274dbc213d5bed05c0638a81f0a4a97905c86ed167fcea72"
 
 [task.depends_on]
-"ae_pipeline/data/2026-10-14-sack-01.pridb" = "5de0ca70bf8a36293c8b911c812b2af5009e73246b54d64d1a0d0b0a6a2ff19f"
-"ae_pipeline/data/2026-10-14-sack-01.tradb" = "225f6475d442e10e2f5b2c29d6b3a250ae8120e8f4c6317e0e62ee0a57a1c90a"
-"ae_pipeline/data/task_characterize_hits.py::task_characterize_hits::ds" = "0"
+"ae_pipeline/data/2026-11-26-walzen1.hits.parquet" = "62b4579389209b603aec1308ec4104f9f9f8ccf0f17b8995be251f5f50fc8b0c"
 
 [task.produces]
-"ae_pipeline/data/2026-10-14-sack-01.hits.parquet" = "a845f2cf7c61dc5e85d123714cc9cc9f7f5c4fc1c2dbefe7e2f61ae5c864721a"
+
+[[task]]
+id = "ae_pipeline/data/task_characterize_hits.py::task_characterize_hits"
+state = "a0f3adafd019e08e6ed4e7d9c73f6a9c9a3a053636add23734d3628a2c708e30"
+
+[task.depends_on]
+"ae_pipeline/data/2026-11-26-walzen1.metadata.toml" = "074d017ed56a3932567e4553c53e65ea254b06eef67cb921bd1669995b83e367"
+"ae_pipeline/data/2026-11-26-walzen1.pridb" = "f044a50be48a67a4d72d62098fe0c878af04a1c56262696738a2460359e5b0ca"
+"ae_pipeline/data/2026-11-26-walzen1.tradb" = "303aa5a5a8063a1db5ff74d619e4e60b1cc9035e945b681a5bcffaabdf9070da"
+"ae_pipeline/metadata.py" = "d0ed5ead8c6065e9545461e2a6604cc41a20b9c7f0c1669de4677f6caae47500"
+"ae_pipeline/spectral.py" = "04c765e5831e095c8ee3cb325c90b9983b468f96d26e6fa227440c793f9b6f06"
+"ae_pipeline/units.py" = "e74028a3b81c3ac56a44a5c9737ab21a6a4e45cd94a0fae8bd854554e7bd32a1"
+
+[task.produces]
+"ae_pipeline/data/2026-11-26-walzen1.hits.parquet" = "62b4579389209b603aec1308ec4104f9f9f8ccf0f17b8995be251f5f50fc8b0c"
+
+[[task]]
+id = "ae_pipeline/data/task_extract_metadata.py::task_extract_metadata"
+state = "b0b46f84ae52042eb0017593ad80674561ff81f602932f0e675faa671448cd0d"
+
+[task.depends_on]
+"ae_pipeline/data/2026-11-26-walzen1.pridb" = "f044a50be48a67a4d72d62098fe0c878af04a1c56262696738a2460359e5b0ca"
+"ae_pipeline/data/2026-11-26-walzen1.tradb" = "303aa5a5a8063a1db5ff74d619e4e60b1cc9035e945b681a5bcffaabdf9070da"
+"ae_pipeline/metadata.py" = "d0ed5ead8c6065e9545461e2a6604cc41a20b9c7f0c1669de4677f6caae47500"
+"ae_pipeline/units.py" = "e74028a3b81c3ac56a44a5c9737ab21a6a4e45cd94a0fae8bd854554e7bd32a1"
+
+[task.produces]
+"ae_pipeline/data/2026-11-26-walzen1.metadata.toml" = "074d017ed56a3932567e4553c53e65ea254b06eef67cb921bd1669995b83e367"
 
 [[task]]
 id = "ae_pipeline/data/task_extract_metadata.py::task_plot_extract_metadata"
@@ -99705,14 +99730,17 @@ state = "cb09d8cee2dc441013a78b05d5e7ea9189f2ba829a7771ec89e5a49dd07baea6"
 
 [[task]]
 id = "ae_pipeline/plots/task_plot_waterfall.py::task_plot_waterfall"
-state = "cb09d8cee2dc441013a78b05d5e7ea9189f2ba829a7771ec89e5a49dd07baea6"
+state = "c51bbd89923f61dbd310831037cb6f7c32bf40d9198be9cba250ca5c42a31b38"
 
 [task.depends_on]
-"ae_pipeline/data/2026-10-14-sack-01.metadata.toml" = "5c36fe4554a9b064d1c75569d1767cc66cc67b3485f6d9fc5481c5ed18fe86ba"
-"ae_pipeline/data/2026-10-14-sack-01.tradb" = "225f6475d442e10e2f5b2c29d6b3a250ae8120e8f4c6317e0e62ee0a57a1c90a"
+"ae_pipeline/data/2026-11-26-walzen1.hits.parquet" = "62b4579389209b603aec1308ec4104f9f9f8ccf0f17b8995be251f5f50fc8b0c"
+"ae_pipeline/data/2026-11-26-walzen1.metadata.toml" = "074d017ed56a3932567e4553c53e65ea254b06eef67cb921bd1669995b83e367"
+"ae_pipeline/metadata.py" = "d0ed5ead8c6065e9545461e2a6604cc41a20b9c7f0c1669de4677f6caae47500"
+"ae_pipeline/spectral.py" = "04c765e5831e095c8ee3cb325c90b9983b468f96d26e6fa227440c793f9b6f06"
+"ae_pipeline/units.py" = "e74028a3b81c3ac56a44a5c9737ab21a6a4e45cd94a0fae8bd854554e7bd32a1"
 
 [task.produces]
-"ae_pipeline/plots/2026-10-14-sack-01/waterfall.png" = "e964572d9ba508561c56379c9b7d716e5b988c1d94d9e6fc81a123173c81408c"
+"ae_pipeline/plots/2026-11-26-walzen1/waterfall.png" = "3f59294ff0500cc2facdb83b757d1bf1762bd29bd5bd20c3eb37d9811b069767"
 
 [[task]]
 id = "ae_pipeline/plots/task_plot_waterfall.py::task_plot_waterfall[2026-10-14-sack-01]"
@@ -99746,6 +99774,25 @@ state = "31dd8105229226d4764dd2569bb0c5043e34d96d1233c03414be895181a3d651"
 
 [task.produces]
 "ae_pipeline/plots/test_conti_2/waterfall.png" = "a683fa62aa069258d9ccf616c35629c0887d3f130eea7286de69ffcbee62089e"
+
+[[task]]
+id = "ae_pipeline/plots/task_plot_waterfall.py::task_plot_waterfall_intervals"
+state = "c51bbd89923f61dbd310831037cb6f7c32bf40d9198be9cba250ca5c42a31b38"
+
+[task.depends_on]
+"ae_pipeline/data/2026-11-26-walzen1.hits.parquet" = "62b4579389209b603aec1308ec4104f9f9f8ccf0f17b8995be251f5f50fc8b0c"
+"ae_pipeline/data/2026-11-26-walzen1.metadata.toml" = "074d017ed56a3932567e4553c53e65ea254b06eef67cb921bd1669995b83e367"
+"ae_pipeline/metadata.py" = "d0ed5ead8c6065e9545461e2a6604cc41a20b9c7f0c1669de4677f6caae47500"
+"ae_pipeline/plots/task_plot_waterfall.py::task_plot_waterfall_intervals::name" = "0"
+"ae_pipeline/spectral.py" = "04c765e5831e095c8ee3cb325c90b9983b468f96d26e6fa227440c793f9b6f06"
+"ae_pipeline/units.py" = "e74028a3b81c3ac56a44a5c9737ab21a6a4e45cd94a0fae8bd854554e7bd32a1"
+
+[task.produces]
+"ae_pipeline/plots/2026-11-26-walzen1/waterfall/1338_Resume.png" = "f585278d5924fb7255fabdcd9b8b73dd9ad57ec307f933cf4359ac88effb7223"
+"ae_pipeline/plots/2026-11-26-walzen1/waterfall/1339_P2.png" = "008567accb6318fc73a887dba16fe9d2e8607cd6e908d08e5d2e06d44a4ff480"
+"ae_pipeline/plots/2026-11-26-walzen1/waterfall/1342_P3.png" = "ddb336810a2bdee1c3f25b398f8fd6022052c4c07572438b583003c87165d9dc"
+"ae_pipeline/plots/2026-11-26-walzen1/waterfall/1346_Ende.png" = "ec007e72c3fe4a312e68c9478301c390402f210adc946557b93f14e969669d40"
+"ae_pipeline/plots/2026-11-26-walzen1/waterfall/1346_P4.png" = "dfb0b433645d596be6cc07cfc929658a295589df973eba800621ffff4bc0ef23"
 
 [[task]]
 id = "ae_pipeline/task_import_aa_data.py::task_describe_dataset"

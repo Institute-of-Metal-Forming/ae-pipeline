@@ -1,6 +1,6 @@
 # 0010 Plot configuration
 
-- **Status:** partially implemented (not yet implemented: R1 there is no `PLOT_FORMATS`, `image_produces` defaults to `["png", "pdf"]` as a mutable default argument and no task uses it; R3–R5 LaTeX is not used; R6 the TeX toolchain is not part of the devenv)
+- **Status:** implemented
 - **Module:** `ae_pipeline/task_config.py` (`PLOT_FORMATS`, `image_produces`, matplotlib defaults), `devenv.nix`
 
 ## Summary
@@ -39,7 +39,7 @@ None.
 
 6. The TeX toolchain needed by R3–R4 (a LaTeX engine, `siunitx`, `type1cm`, `dvipng` for PNG output and the fonts) is provided by `devenv.nix`, so plots render inside `devenv shell` without a system TeX installation.
 
-7. The global figure size, dpi, line widths, tick direction and font size stay as they are. Plot tasks do not override any global default, with the single exception of the figure size (`docs/conventions.md`, Plots).
+7. The global figure size, dpi, line widths, tick direction and font size stay as they are. Plot tasks do not override any global default, with the single exception of the figure size (per-artist styles that a spec names explicitly, such as the peak markers of 0006, are allowed) (`docs/conventions.md`, Plots).
 
 ## Open questions
 

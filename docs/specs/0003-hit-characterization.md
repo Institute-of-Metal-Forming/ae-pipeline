@@ -1,6 +1,6 @@
 # 0003 Hit characterization
 
-- **Status:** partially implemented (not yet implemented: R2 `trai` is still `uint16` and hits without a transient record are not skipped; R3 `amplitude` is still in V, float columns are float64 and `counts` is uint16; R9 is not checked; R4 the `pretrigger` and `signal` columns are missing, `signal_dB`, `sample_rate` and `nfft` are still stored, and the PSD does not use `ae_pipeline/spectral.py` (short records are not zero-padded); R6 the unused `THRESHOLD` constant and `ds` argument still exist and `PEAK_PROMINENCE` is hard-coded; R7 conversions are inline instead of using `ae_pipeline/units.py`; R8 the shared modules are not declared as dependencies)
+- **Status:** implemented
 - **Module:** `ae_pipeline/data/task_characterize_hits.py` (`task_characterize_hits`)
 
 ## Summary
@@ -59,11 +59,13 @@ The spectral settings (segment length, hop, window) are those of 0009.
 
 5. The file can be read back with `pd.read_parquet(..., dtype_backend="pyarrow")`. Consumers convert the list columns with `np.array(...)`.
 
+   Rows are in pridb order, i.e. ascending `time`, and the file is written in several row groups, so consumers can stream it (e.g. with `pyarrow.dataset`) and skip row groups by their `time` statistics.
+
 6. The module defines no unused parameters: the task takes only `primary_file`, `transient_file`, `metadata_file`, the shared module dependencies (R8) and `produces` as arguments, and the only module-level parameter is `PEAK_PROMINENCE`.
 
 7. All data is stored linear in µV (µV²/Hz for `psd`); no level in dB(AE) is stored (`docs/conventions.md`, Units). All conversions use the functions of `ae_pipeline/units.py` (0008).
 
-8. The task declares `ae_pipeline/units.py` and `ae_pipeline/spectral.py` as dependencies (`docs/conventions.md`, Tasks).
+8. The task declares `ae_pipeline/units.py`, `ae_pipeline/spectral.py` and `ae_pipeline/metadata.py` (it reads the sample rate with `load_metadata`) as dependencies (`docs/conventions.md`, Tasks).
 
 ### Malformed datasets
 

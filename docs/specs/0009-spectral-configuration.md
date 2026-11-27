@@ -1,6 +1,6 @@
 # 0009 Spectral configuration
 
-- **Status:** not implemented
+- **Status:** implemented
 - **Module:** `ae_pipeline/spectral.py` (`NPERSEG`, `HOP`, `WINDOW`, `psd_frequencies`, `welch_psd`, `short_time_fft`)
 
 ## Summary
@@ -29,7 +29,7 @@ None.
 
 2. `welch_psd(signal, sample_rate)` returns the Welch PSD of `signal` (µV) in µV²/Hz, `scipy.signal.welch(signal, sample_rate, window=WINDOW, nperseg=NPERSEG, noverlap=NPERSEG - HOP)`, at the frequencies of R1. Signals shorter than `NPERSEG` samples are zero-padded at the end to `NPERSEG` samples first, so the result always has `NPERSEG // 2 + 1` values. The computation is done in float64, whatever the input dtype.
 
-3. `short_time_fft(sample_rate)` returns a `scipy.signal.ShortTimeFFT` with `WINDOW`, `NPERSEG`, `HOP`, the given sample rate and `scale_to="psd"`. Its `spectrogram(signal)` gives the PSD per column in µV²/Hz at the frequencies of R1, and column `k` is centered at `k * HOP / sample_rate` from the start of the signal. Signals shorter than a segment are zero-padded by its default padding, so they get at least one column. The input is converted to float64 first, as in R2.
+3. `short_time_fft(sample_rate)` returns a `scipy.signal.ShortTimeFFT` with `WINDOW`, `NPERSEG`, `HOP`, the given sample rate, `fft_mode="onesided2X"` and `scale_to="psd"`. `onesided2X` doubles the non-DC bins like the Welch PSD, so a spectrogram column of a stationary signal equals its Welch PSD (R2); the scipy default `onesided` would give half of it. Its `spectrogram(signal)` gives the PSD per column in µV²/Hz at the frequencies of R1, and column `k` is centered at `k * HOP / sample_rate` from the start of the signal. The input is converted to float64 first, as in R2. `ShortTimeFFT` rejects signals shorter than `NPERSEG - NPERSEG // 2` = 1024 samples, so its `stft` and `spectrogram` (e.g. in a `ShortTimeFFT` subclass) zero-pad such signals at the end to that length first; this adds no column, and every signal gets at least one column.
 
 4. All other modules take these settings and functions from here; no other module defines a segment length, hop or window for spectral analysis.
 

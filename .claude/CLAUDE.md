@@ -20,7 +20,7 @@ Developer docs live in `docs/`: `architecture.md` (architecture and the decision
 ```
 ae_pipeline/
   task_config.py            # paths, flags, Dataset model, DATASETS, PLOT_FORMATS, matplotlib rcParams (LaTeX), spec 0010
-  units.py                  # unit conversions (V -> µV, µV -> dB(AE)), spec 0008
+  units.py                  # unit conversions (V -> µV, µV -> dB(AE), Hz -> kHz), spec 0008
   spectral.py               # spectral settings (NPERSEG, HOP, WINDOW), Welch PSD, STFT, spec 0009
   metadata.py               # Metadata model, load_metadata, label_intervals, spec 0002
   data/                     # raw input (*.pridb/*.tradb, gitignored) and derived data
@@ -40,7 +40,7 @@ pytask collects `task_*.py` under `ae_pipeline/`. Paths starting with `.` or `_`
 - A dataset is a `*.pridb` (primary/hit data) plus a `*.tradb` (transient waveforms) with the same stem in `ae_pipeline/data/`. Both are SQLite and are read with `vallenae.io.PriDatabase` / `TraDatabase`.
 - `task_config.Dataset` derives all per-dataset paths (`transient_file`, `hits_file`, `metadata_file`) and validates that both source files exist. `DATASETS` is built by globbing `DATA_DIR` at import time.
 - Hits are indexed by `trai` (transient recording index). Parquet is written with brotli compression and read back with `dtype_backend="pyarrow"`.
-- All stored data is linear in µV (µV²/Hz for PSDs); levels in dB(AE) are never stored, only computed for display. dB always means dB(AE) re 1 µV: `20 * log10` for amplitudes, `10 * log10` for power quantities. Convert only through `ae_pipeline/units.py` (`volts_to_microvolts`, `amplitude_to_dB`, `dB_to_amplitude`, `power_to_dB`), never inline. See `docs/conventions.md`.
+- All stored data is linear in µV (µV²/Hz for PSDs); levels in dB(AE) are never stored, only computed for display. dB always means dB(AE) re 1 µV: `20 * log10` for amplitudes, `10 * log10` for power quantities. Convert only through `ae_pipeline/units.py` (`volts_to_microvolts`, `amplitude_to_dB`, `dB_to_amplitude`, `power_to_dB`, `hz_to_khz`), never inline. See `docs/conventions.md`.
 - Marker labels in the metadata (Vallen set_type 4, without the TimeZone marker) map label to time in seconds. Read the metadata only via `ae_pipeline/metadata.py`; label intervals (skipping "Suspend" labels and too short intervals) come from `label_intervals`.
 - The sample rate is one per dataset and stored only in the metadata.
 
@@ -53,12 +53,11 @@ for ds in DATASETS:
 
     @pytask.task(id=ds.name)
     def task_something(
-        hits_file=ds.hits_file,        # dependencies as default args (binds loop vars)
+        hits_file=ds.hits_file,  # dependencies as default args (binds loop vars)
         ds=ds,
         spectral_module=Path(ae_pipeline.spectral.__file__),  # shared modules are dependencies too
         produces=image_produces(PLOTS_DIR / ds.name / "something"),
-    ):
-        ...
+    ): ...
 ```
 
 - Declare every input as a dependency argument and every output via `produces`, so pytask can track them. For a variable number of outputs, use `Annotated[Path, pytask.DirectoryNode(...), pytask.Product]` (see `task_plot_hits.py`).

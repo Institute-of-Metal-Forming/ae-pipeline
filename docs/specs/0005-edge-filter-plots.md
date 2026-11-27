@@ -1,6 +1,6 @@
 # 0005 Edge filter plots
 
-- **Status:** withdrawn (not yet implemented: the module and its outputs still exist)
+- **Status:** withdrawn (done: the module is deleted)
 - **Module:** `ae_pipeline/plots/task_plot_edge_filter.py` (to be removed)
 
 ## Summary

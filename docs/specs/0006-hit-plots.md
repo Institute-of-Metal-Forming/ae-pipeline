@@ -1,6 +1,6 @@
 # 0006 Hit plots
 
-- **Status:** partially implemented (not yet implemented: R2 the threshold line uses the hard-coded `THRESHOLD = 32` instead of the channel threshold, the level is read from the stored `signal_dB` instead of computed from `signal`, the level is always reduced to 1000 points by reshaping instead of the block maximum with variable window, the hit start and end lines are missing, the sample rate and frequencies come from the hits table, and the labels are not typeset with LaTeX; R3 outputs do not use `PLOT_FORMATS` and old files are not deleted; R4 the figure size is overridden with `figsize=(6.4, 4.8)`; R5 the shared modules are not declared as dependencies)
+- **Status:** implemented
 - **Module:** `ae_pipeline/plots/task_plot_hits.py` (`task_plot_hits`)
 
 ## Summary
@@ -33,7 +33,7 @@ The sample rate is the same for all hits of a dataset (0002 R5, R10), so the num
       - Two vertical lines mark the hit: its start (threshold crossing) at `pretrigger / sample_rate` and its end at `pretrigger / sample_rate + duration`.
       - A red dashed horizontal line marks the detection threshold of the hit's channel, `amplitude_to_dB(channels.<n>.threshold)` from the metadata (0002 R6, stored in µV).
       - y-axis `r"Intensity in \unit{\dBAE}"`, limits 0 … 100. x-axis `r"Time $t$ in \unit{\second}"` (0010 R5).
-   2. **Spectrum:** `psd` against frequency `psd_frequencies(sample_rate)` (0009 R1) in kHz. x-axis `r"Frequency in \unit{\kilo\hertz}"`, y-axis `r"Power Spectral Density in \unit{\micro\volt\squared\per\hertz}"`, lower limit 0. Each entry of `peaks` is marked with a red `+` and annotated with its frequency in kHz (rounded to an integer).
+   2. **Spectrum:** `psd` against frequency `hz_to_khz(psd_frequencies(sample_rate))` (0008 R5, 0009 R1) in kHz. x-axis `r"Frequency in \unit{\kilo\hertz}"`, y-axis `r"Power Spectral Density in \unit{\micro\volt\squared\per\hertz}"`, lower limit 0. Each entry of `peaks` is marked with a red `+` and annotated with its frequency in kHz (rounded to an integer). The peak markers and annotations have their own style (thin marker lines, small font); this is intended and allowed besides 0010 R7.
 3. The figure for the hit with index `trai` is saved as `hit_<trai>` in every format of `PLOT_FORMATS` and closed afterwards. Before writing, the task deletes all existing files in `plots/<name>/hits/` (`docs/conventions.md`, Tasks), so figures of hits that no longer exist do not remain.
 4. The figures use the global matplotlib defaults from `task_config.py` (0010), including the figure size; the task does not override any of them.
 5. The task declares `ae_pipeline/units.py`, `ae_pipeline/spectral.py` and `ae_pipeline/metadata.py` as dependencies (`docs/conventions.md`, Tasks).

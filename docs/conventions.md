@@ -29,6 +29,7 @@ Coding conventions for ae-pipeline. Rules enforced by tooling are configured in 
 - All stored data is linear: voltages (waveforms, amplitudes, thresholds) in µV, power quantities in µV² or µV²/Hz. Values read from the Vallen databases (in V) are converted to µV right after reading. Levels in dB(AE) are never stored; they are computed only where they are shown, e.g. in plots.
 
 - All unit conversions go through the central functions in `ae_pipeline/units.py` (spec 0008): `volts_to_microvolts`, `amplitude_to_dB`, `dB_to_amplitude`, `power_to_dB`. Do not write `1e6` factors or `log10` levels inline.
+- All unit conversions go through the central functions in `ae_pipeline/units.py` (spec 0008): `volts_to_microvolts`, `amplitude_to_dB`, `dB_to_amplitude`, `power_to_dB`, `hz_to_khz`. Do not write `1e6` or `1e3` factors or `log10` levels inline.
 
 - dB always means dB(AE), the AE domain standard: a level relative to 1 µV. Signals are in µV (see above), so the reference value is 1.
 

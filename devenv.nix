@@ -75,5 +75,17 @@
     codebook
     nail-parquet
     sqlitebrowser
+    # shared library needed by the numpy wheel (libz.so.1)
+    zlib
+    # TeX toolchain for matplotlib text.usetex with siunitx (spec 0010 R6)
+    (texliveSmall.withPackages (
+      ps: with ps; [
+        siunitx
+        type1cm
+        cm-super
+        dvipng
+        underscore
+      ]
+    ))
   ];
 }

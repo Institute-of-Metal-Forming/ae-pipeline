@@ -87,3 +87,6 @@ known-first-party = ["ae_pipeline"]
 [tool.pytask.ini_options]
 paths = ["ae_pipeline"]
 ignore = [".*", "_*"]
+
+[dependency-groups]
+dev = ["pytest~=9.2"]

@@ -1,6 +1,6 @@
 # 0001 Dataset discovery
 
-- **Status:** partially implemented (not yet implemented: R4 a missing `.tradb` currently makes task collection fail; R8 the unused flag `DEBUG` still exists)
+- **Status:** implemented
 - **Module:** `ae_pipeline/task_config.py` (`Dataset`, `DATASETS`)
 
 ## Summary
